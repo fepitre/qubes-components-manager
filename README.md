@@ -1,0 +1,2 @@
+qubes-component-manager
+===
