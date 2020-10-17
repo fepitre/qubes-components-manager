@@ -1,0 +1,76 @@
+{
+    "python-panflute": {
+        "releases": {
+            "4.0": {
+                "branch": "master",
+                "dom0": {
+                    "fc25": [
+                        "python-panflute",
+                        "python3-panflute"
+                    ]
+                },
+                "vms": {
+                    "fc30": [
+                        "python-panflute",
+                        "python3-panflute"
+                    ],
+                    "fc31": [
+                        "python-panflute",
+                        "python3-panflute"
+                    ],
+                    "fc32": [
+                        "python-panflute",
+                        "python3-panflute"
+                    ],
+                    "centos7": [
+                        "python-panflute",
+                        "python3-panflute"
+                    ],
+                    "centos8": [
+                        "python-panflute",
+                        "python3-panflute"
+                    ],
+                    "stretch": [],
+                    "buster": [],
+                    "bullseye": [],
+                    "whonix-gateway-15": [],
+                    "whonix-workstation-15": [],
+                    "archlinux": []
+                }
+            },
+            "4.1": {
+                "branch": "master",
+                "dom0": {
+                    "fc32": [
+                        "python-panflute",
+                        "python3-panflute"
+                    ]
+                },
+                "vms": {
+                    "fc32": [
+                        "python-panflute",
+                        "python3-panflute"
+                    ],
+                    "fc33": [
+                        "python-panflute",
+                        "python3-panflute"
+                    ],
+                    "centos7": [
+                        "python-panflute",
+                        "python3-panflute"
+                    ],
+                    "centos8": [
+                        "python-panflute",
+                        "python3-panflute"
+                    ],
+                    "buster": [],
+                    "bullseye": [],
+                    "whonix-gateway-15": [],
+                    "whonix-workstation-15": [],
+                    "archlinux": [],
+                    "gentoo": []
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "desktop-linux-awesome": {
+        "releases": {
+            "4.0": {
+                "branch": "release4.0",
+                "dom0": {
+                    "fc25": [
+                        "awesome",
+                        "awesome-doc",
+                        "awesome-debuginfo",
+                        "awesome-debugsource"
+                    ]
+                },
+                "vms": {
+                    "fc30": [],
+                    "fc31": [],
+                    "fc32": [],
+                    "centos7": [],
+                    "centos8": [],
+                    "stretch": [],
+                    "buster": [],
+                    "bullseye": [],
+                    "whonix-gateway-15": [],
+                    "whonix-workstation-15": [],
+                    "archlinux": []
+                }
+            },
+            "4.1": {
+                "branch": "master",
+                "dom0": {
+                    "fc32": [
+                        "awesome",
+                        "awesome-doc",
+                        "awesome-debuginfo",
+                        "awesome-debugsource"
+                    ]
+                },
+                "vms": {
+                    "fc32": [
+                        "awesome",
+                        "awesome-doc",
+                        "awesome-debuginfo",
+                        "awesome-debugsource"
+                    ],
+                    "fc33": [
+                        "awesome",
+                        "awesome-doc",
+                        "awesome-debuginfo",
+                        "awesome-debugsource"
+                    ],
+                    "centos7": [],
+                    "centos8": [
+                        "awesome",
+                        "awesome-doc",
+                        "awesome-debuginfo",
+                        "awesome-debugsource"
+                    ],
+                    "buster": [],
+                    "bullseye": [],
+                    "whonix-gateway-15": [],
+                    "whonix-workstation-15": [],
+                    "archlinux": [],
+                    "gentoo": []
+                }
+            }
+        }
+    }
+}

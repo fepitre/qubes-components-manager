@@ -1,0 +1,29 @@
+{
+    "blivet": {
+        "iso-installer": 1,
+        "releases": {
+            "4.1": {
+                "branch": "master",
+                "dom0": {
+                    "fc32": [
+                        "python-blivet",
+                        "blivet-data",
+                        "python3-blivet"
+                    ]
+                },
+                "vms": {
+                    "fc32": [],
+                    "fc33": [],
+                    "centos7": [],
+                    "centos8": [],
+                    "buster": [],
+                    "bullseye": [],
+                    "whonix-gateway-15": [],
+                    "whonix-workstation-15": [],
+                    "archlinux": [],
+                    "gentoo": []
+                }
+            }
+        }
+    }
+}

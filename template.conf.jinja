@@ -1,0 +1,69 @@
+# vim: ft=make ts=4 sw=4
+
+# Ready to use config for full build of the Qubes OS R{{release}}.
+
+GIT_BASEURL ?= https://github.com
+GIT_PREFIX ?= QubesOS/qubes-
+{%- if devel != 1 %}
+BRANCH ?= release{{release}}
+{%- endif %}
+
+NO_SIGN ?= 1
+BACKEND_VMM ?= xen
+TEMPLATE_ROOT_WITH_PARTITIONS = 1
+
+DIST_DOM0 ?={% for vm in dist_dom0 %} {{vm}}{% endfor %}
+DISTS_VM ?= {{ '\\' if dists_vm|length > 0 }}
+{%- for vm in dists_vm %}
+	{{vm}}{{ ' \\' if not loop.last }}
+{%- endfor %}
+
+BUILDER_PLUGINS ?= {{ '\\' if builder_plugins|length > 0 }}
+{%- for component in builder_plugins %}
+	{{component}}{{ ' \\' if not loop.last }}
+{%- endfor %}
+
+ISO_COMPONENTS ?= {{ '\\' if iso_components|length > 0 }}
+{%- for component in iso_components %}
+	{{component}}{{ ' \\' if not loop.last }}
+{%- endfor %}
+
+WINDOWS_COMPONENTS ?= {{ '\\' if windows_components|length > 0 }}
+{%- for component in windows_components %}
+	{{component}}{{ ' \\' if not loop.last }}
+{%- endfor %}
+
+COMPONENTS ?= \
+	$(BUILDER_PLUGIN) \
+	$(ISO_COMPONENTS){{ ' \\' if components|length > 0 }}
+{%- for component in components %}
+	{{component}}{{ ' \\' if not loop.last }}
+{%- endfor %}
+
+{{ '# Specific branch for components' if branches|length > 0 }}
+{%- for branch in branches %}
+{{branch}}
+{%- endfor %}
+
+{{ '# Specific maintainers for components' if maintainers|length > 0 }}
+{%- for maintainer in maintainers %}
+{{maintainer}}
+{%- endfor %}
+
+# Uncomment this lines to enable windows tools build
+#DISTS_VM += win7x64
+#COMPONENTS += $(WINDOWS_COMPONENTS)
+
+TEMPLATE_LABELS ?= {{ '\\' if template_labels|length > 0 }}
+{%- for label in template_labels %}
+	{{label}}{{ ' \\' if not loop.last }}
+{%- endfor %}
+
+TEMPLATE_ALIAS ?= {{ '\\' if template_aliases|length > 0 }}
+{%- for alias in template_aliases %}
+	{{alias}}{{ ' \\' if not loop.last }}
+{%- endfor %}
+
+about::
+	@echo "qubes-os-r{{release}}.conf"
+

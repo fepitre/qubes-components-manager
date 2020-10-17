@@ -1,0 +1,53 @@
+{
+    "mgmt-salt-base-topd": {
+        "releases": {
+            "4.0": {
+                "branch": "release4.0",
+                "dom0": {
+                    "fc25": []
+                },
+                "vms": {
+                    "fc30": [],
+                    "fc31": [],
+                    "fc32": [],
+                    "centos7": [],
+                    "centos8": [],
+                    "stretch": [
+                        "qubes-mgmt-salt-base-topd"
+                    ],
+                    "buster": [
+                        "qubes-mgmt-salt-base-topd"
+                    ],
+                    "bullseye": [
+                        "qubes-mgmt-salt-base-topd"
+                    ],
+                    "whonix-gateway-15": [],
+                    "whonix-workstation-15": [],
+                    "archlinux": []
+                }
+            },
+            "4.1": {
+                "branch": "master",
+                "dom0": {
+                    "fc32": []
+                },
+                "vms": {
+                    "fc32": [],
+                    "fc33": [],
+                    "centos7": [],
+                    "centos8": [],
+                    "buster": [
+                        "qubes-mgmt-salt-base-topd"
+                    ],
+                    "bullseye": [
+                        "qubes-mgmt-salt-base-topd"
+                    ],
+                    "whonix-gateway-15": [],
+                    "whonix-workstation-15": [],
+                    "archlinux": [],
+                    "gentoo": []
+                }
+            }
+        }
+    }
+}

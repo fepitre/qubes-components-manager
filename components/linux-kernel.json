@@ -1,0 +1,51 @@
+{
+    "linux-kernel": {
+        "releases": {
+            "4.0": {
+                "branch": "stable-4.19",
+                "dom0": {
+                    "fc25": [
+                        "kernel-414",
+                        "kernel-414-devel",
+                        "kernel-414-qubes-vm"
+                    ]
+                },
+                "vms": {
+                    "fc30": [],
+                    "fc31": [],
+                    "fc32": [],
+                    "centos7": [],
+                    "centos8": [],
+                    "stretch": [],
+                    "buster": [],
+                    "bullseye": [],
+                    "whonix-gateway-15": [],
+                    "whonix-workstation-15": [],
+                    "archlinux": []
+                }
+            },
+            "4.1": {
+                "branch": "stable-5.4",
+                "dom0": {
+                    "fc32": [
+                        "kernel",
+                        "kernel-devel",
+                        "kernel-qubes-vm"
+                    ]
+                },
+                "vms": {
+                    "fc32": [],
+                    "fc33": [],
+                    "centos7": [],
+                    "centos8": [],
+                    "buster": [],
+                    "bullseye": [],
+                    "whonix-gateway-15": [],
+                    "whonix-workstation-15": [],
+                    "archlinux": [],
+                    "gentoo": []
+                }
+            }
+        }
+    }
+}

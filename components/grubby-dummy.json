@@ -1,0 +1,57 @@
+{
+    "grubby-dummy": {
+        "releases": {
+            "4.0": {
+                "branch": "master",
+                "dom0": {
+                    "fc25": []
+                },
+                "vms": {
+                    "fc30": [
+                        "grubby-dummy"
+                    ],
+                    "fc31": [
+                        "grubby-dummy"
+                    ],
+                    "fc32": [
+                        "grubby-dummy"
+                    ],
+                    "centos7": [],
+                    "centos8": [
+                        "grubby-dummy"
+                    ],
+                    "stretch": [],
+                    "buster": [],
+                    "bullseye": [],
+                    "whonix-gateway-15": [],
+                    "whonix-workstation-15": [],
+                    "archlinux": []
+                }
+            },
+            "4.1": {
+                "branch": "master",
+                "dom0": {
+                    "fc32": []
+                },
+                "vms": {
+                    "fc32": [
+                        "grubby-dummy"
+                    ],
+                    "fc33": [
+                        "grubby-dummy"
+                    ],
+                    "centos7": [],
+                    "centos8": [
+                        "grubby-dummy"
+                    ],
+                    "buster": [],
+                    "bullseye": [],
+                    "whonix-gateway-15": [],
+                    "whonix-workstation-15": [],
+                    "archlinux": [],
+                    "gentoo": []
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "python-xcffib": {
+        "releases": {
+            "4.0": {
+                "branch": "master",
+                "dom0": {
+                    "fc25": []
+                },
+                "vms": {
+                    "fc30": [],
+                    "fc31": [],
+                    "fc32": [],
+                    "centos7": [],
+                    "centos8": [],
+                    "stretch": [
+                        "python-xcffib",
+                        "python3-xcffib"
+                    ],
+                    "buster": [
+                        "python-xcffib",
+                        "python3-xcffib"
+                    ],
+                    "bullseye": [],
+                    "whonix-gateway-15": [],
+                    "whonix-workstation-15": [],
+                    "archlinux": []
+                }
+            },
+            "4.1": {
+                "branch": "master",
+                "dom0": {
+                    "fc32": []
+                },
+                "vms": {
+                    "fc32": [],
+                    "fc33": [],
+                    "centos7": [],
+                    "centos8": [],
+                    "buster": [
+                        "python-xcffib",
+                        "python3-xcffib"
+                    ],
+                    "bullseye": [],
+                    "whonix-gateway-15": [],
+                    "whonix-workstation-15": [],
+                    "archlinux": [],
+                    "gentoo": []
+                }
+            }
+        }
+    }
+}

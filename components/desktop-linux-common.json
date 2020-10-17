@@ -1,0 +1,91 @@
+{
+    "desktop-linux-common": {
+        "releases": {
+            "4.0": {
+                "branch": "release4.0",
+                "dom0": {
+                    "fc25": [
+                        "qubes-desktop-linux-common",
+                        "qubes-menus"
+                    ]
+                },
+                "vms": {
+                    "fc30": [
+                        "qubes-desktop-linux-common",
+                        "qubes-menus"
+                    ],
+                    "fc31": [
+                        "qubes-desktop-linux-common",
+                        "qubes-menus"
+                    ],
+                    "fc32": [
+                        "qubes-desktop-linux-common",
+                        "qubes-menus"
+                    ],
+                    "centos7": [
+                        "qubes-desktop-linux-common",
+                        "qubes-menus"
+                    ],
+                    "centos8": [
+                        "qubes-desktop-linux-common",
+                        "qubes-menus"
+                    ],
+                    "stretch": [
+                        "qubes-desktop-linux-common",
+                        "qubes-menus"
+                    ],
+                    "buster": [
+                        "qubes-desktop-linux-common",
+                        "qubes-menus"
+                    ],
+                    "bullseye": [
+                        "qubes-desktop-linux-common",
+                        "qubes-menus"
+                    ],
+                    "whonix-gateway-15": [],
+                    "whonix-workstation-15": [],
+                    "archlinux": []
+                }
+            },
+            "4.1": {
+                "branch": "master",
+                "dom0": {
+                    "fc32": [
+                        "qubes-desktop-linux-common",
+                        "qubes-menus"
+                    ]
+                },
+                "vms": {
+                    "fc32": [
+                        "qubes-desktop-linux-common",
+                        "qubes-menus"
+                    ],
+                    "fc33": [
+                        "qubes-desktop-linux-common",
+                        "qubes-menus"
+                    ],
+                    "centos7": [
+                        "qubes-desktop-linux-common",
+                        "qubes-menus"
+                    ],
+                    "centos8": [
+                        "qubes-desktop-linux-common",
+                        "qubes-menus"
+                    ],
+                    "buster": [
+                        "qubes-desktop-linux-common",
+                        "qubes-menus"
+                    ],
+                    "bullseye": [
+                        "qubes-desktop-linux-common",
+                        "qubes-menus"
+                    ],
+                    "whonix-gateway-15": [],
+                    "whonix-workstation-15": [],
+                    "archlinux": [],
+                    "gentoo": []
+                }
+            }
+        }
+    }
+}
