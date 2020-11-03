@@ -12,20 +12,8 @@
                     "fc32": [],
                     "centos7": [],
                     "centos8": [],
-                    "stretch": [
-                        "libcomps-dev",
-                        "libcomps0",
-                        "libcomps-doc",
-                        "python-libcomps-doc",
-                        "python3-libcomps"
-                    ],
-                    "buster": [
-                        "libcomps-dev",
-                        "libcomps0",
-                        "libcomps-doc",
-                        "python-libcomps-doc",
-                        "python3-libcomps"
-                    ],
+                    "stretch": [],
+                    "buster": [],
                     "bullseye": [
                         "libcomps-dev",
                         "libcomps0",
@@ -48,13 +36,7 @@
                     "fc33": [],
                     "centos7": [],
                     "centos8": [],
-                    "buster": [
-                        "libcomps-dev",
-                        "libcomps0",
-                        "libcomps-doc",
-                        "python-libcomps-doc",
-                        "python3-libcomps"
-                    ],
+                    "buster": [],
                     "bullseye": [
                         "libcomps-dev",
                         "libcomps0",

@@ -9,7 +9,6 @@
                         "qubes-db",
                         "qubes-db-libs",
                         "qubes-db-devel",
-                        "python2-qubesdb",
                         "python3-qubesdb",
                         "qubes-db-debuginfo",
                         "qubes-db-debugsource",
@@ -21,7 +20,6 @@
                         "qubes-db",
                         "qubes-db-libs",
                         "qubes-db-devel",
-                        "python2-qubesdb",
                         "python3-qubesdb",
                         "qubes-db-debuginfo",
                         "qubes-db-debugsource",
@@ -31,7 +29,6 @@
                         "qubes-db",
                         "qubes-db-libs",
                         "qubes-db-devel",
-                        "python2-qubesdb",
                         "python3-qubesdb",
                         "qubes-db-debuginfo",
                         "qubes-db-debugsource",
@@ -41,7 +38,6 @@
                         "qubes-db",
                         "qubes-db-libs",
                         "qubes-db-devel",
-                        "python2-qubesdb",
                         "python3-qubesdb",
                         "qubes-db-debuginfo",
                         "qubes-db-debugsource",
@@ -51,7 +47,6 @@
                         "qubes-db",
                         "qubes-db-libs",
                         "qubes-db-devel",
-                        "python2-qubesdb",
                         "python3-qubesdb",
                         "qubes-db-debuginfo",
                         "qubes-db-debugsource",
@@ -61,7 +56,6 @@
                         "qubes-db",
                         "qubes-db-libs",
                         "qubes-db-devel",
-                        "python2-qubesdb",
                         "python3-qubesdb",
                         "qubes-db-debuginfo",
                         "qubes-db-debugsource",
@@ -72,7 +66,6 @@
                         "qubesdb-vm",
                         "libqubesdb",
                         "qubesdb-dev",
-                        "python-qubesdb",
                         "python3-qubesdb"
                     ],
                     "buster": [
@@ -80,7 +73,6 @@
                         "qubesdb-vm",
                         "libqubesdb",
                         "qubesdb-dev",
-                        "python-qubesdb",
                         "python3-qubesdb"
                     ],
                     "bullseye": [
@@ -88,7 +80,6 @@
                         "qubesdb-vm",
                         "libqubesdb",
                         "qubesdb-dev",
-                        "python-qubesdb",
                         "python3-qubesdb"
                     ],
                     "whonix-gateway-15": [],

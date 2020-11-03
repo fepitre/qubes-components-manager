@@ -25,15 +25,9 @@
                     "centos8": [
                         "qubes-mgmt-salt-base-topd"
                     ],
-                    "stretch": [
-                        "qubes-mgmt-salt-base-topd"
-                    ],
-                    "buster": [
-                        "qubes-mgmt-salt-base-topd"
-                    ],
-                    "bullseye": [
-                        "qubes-mgmt-salt-base-topd"
-                    ],
+                    "stretch": [],
+                    "buster": [],
+                    "bullseye": [],
                     "whonix-gateway-15": [],
                     "whonix-workstation-15": [],
                     "archlinux": []
@@ -59,12 +53,8 @@
                     "centos8": [
                         "qubes-mgmt-salt-base-topd"
                     ],
-                    "buster": [
-                        "qubes-mgmt-salt-base-topd"
-                    ],
-                    "bullseye": [
-                        "qubes-mgmt-salt-base-topd"
-                    ],
+                    "buster": [],
+                    "bullseye": [],
                     "whonix-gateway-15": [],
                     "whonix-workstation-15": [],
                     "archlinux": [],

@@ -4,9 +4,7 @@
             "4.0": {
                 "branch": "master",
                 "dom0": {
-                    "fc25": [
-                        "qubes-mgmt-salt-dom0-qubes-infrastructure"
-                    ]
+                    "fc25": []
                 },
                 "vms": {
                     "fc30": [],
@@ -25,9 +23,7 @@
             "4.1": {
                 "branch": "master",
                 "dom0": {
-                    "fc32": [
-                        "qubes-mgmt-salt-dom0-qubes-infrastructure"
-                    ]
+                    "fc32": []
                 },
                 "vms": {
                     "fc32": [],

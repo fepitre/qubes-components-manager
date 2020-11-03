@@ -20,10 +20,10 @@
                         "qubes-pdf-converter"
                     ],
                     "centos7": [],
-                    "centos8": [],
-                    "stretch": [
+                    "centos8": [
                         "qubes-pdf-converter"
                     ],
+                    "stretch": [],
                     "buster": [
                         "qubes-pdf-converter"
                     ],
@@ -50,7 +50,9 @@
                         "qubes-pdf-converter"
                     ],
                     "centos7": [],
-                    "centos8": [],
+                    "centos8": [
+                        "qubes-pdf-converter"
+                    ],
                     "buster": [
                         "qubes-pdf-converter"
                     ],

@@ -10,21 +10,11 @@
                     ]
                 },
                 "vms": {
-                    "fc30": [
-                        "qubes-desktop-linux-manager"
-                    ],
-                    "fc31": [
-                        "qubes-desktop-linux-manager"
-                    ],
-                    "fc32": [
-                        "qubes-desktop-linux-manager"
-                    ],
-                    "centos7": [
-                        "qubes-desktop-linux-manager"
-                    ],
-                    "centos8": [
-                        "qubes-desktop-linux-manager"
-                    ],
+                    "fc30": [],
+                    "fc31": [],
+                    "fc32": [],
+                    "centos7": [],
+                    "centos8": [],
                     "stretch": [],
                     "buster": [],
                     "bullseye": [],
@@ -41,18 +31,10 @@
                     ]
                 },
                 "vms": {
-                    "fc32": [
-                        "qubes-desktop-linux-manager"
-                    ],
-                    "fc33": [
-                        "qubes-desktop-linux-manager"
-                    ],
-                    "centos7": [
-                        "qubes-desktop-linux-manager"
-                    ],
-                    "centos8": [
-                        "qubes-desktop-linux-manager"
-                    ],
+                    "fc32": [],
+                    "fc33": [],
+                    "centos7": [],
+                    "centos8": [],
                     "buster": [],
                     "bullseye": [],
                     "whonix-gateway-15": [],

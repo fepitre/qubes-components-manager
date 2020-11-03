@@ -12,26 +12,8 @@
                     "fc32": [],
                     "centos7": [],
                     "centos8": [],
-                    "stretch": [
-                        "libdnf-dev",
-                        "libdnf1",
-                        "libdnf2",
-                        "libdnf2-common",
-                        "libdnf-doc",
-                        "python3-hawkey",
-                        "python3-hawkey-doc",
-                        "python3-libdnf"
-                    ],
-                    "buster": [
-                        "libdnf-dev",
-                        "libdnf1",
-                        "libdnf2",
-                        "libdnf2-common",
-                        "libdnf-doc",
-                        "python3-hawkey",
-                        "python3-hawkey-doc",
-                        "python3-libdnf"
-                    ],
+                    "stretch": [],
+                    "buster": [],
                     "bullseye": [
                         "libdnf-dev",
                         "libdnf1",
@@ -57,16 +39,7 @@
                     "fc33": [],
                     "centos7": [],
                     "centos8": [],
-                    "buster": [
-                        "libdnf-dev",
-                        "libdnf1",
-                        "libdnf2",
-                        "libdnf2-common",
-                        "libdnf-doc",
-                        "python3-hawkey",
-                        "python3-hawkey-doc",
-                        "python3-libdnf"
-                    ],
+                    "buster": [],
                     "bullseye": [
                         "libdnf-dev",
                         "libdnf1",

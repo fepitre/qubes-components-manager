@@ -479,7 +479,6 @@
                             "qubes-db",
                             "qubes-db-libs",
                             "qubes-db-devel",
-                            "python2-qubesdb",
                             "python3-qubesdb",
                             "qubes-db-debuginfo",
                             "qubes-db-debugsource",
@@ -491,7 +490,6 @@
                             "qubes-db",
                             "qubes-db-libs",
                             "qubes-db-devel",
-                            "python2-qubesdb",
                             "python3-qubesdb",
                             "qubes-db-debuginfo",
                             "qubes-db-debugsource",
@@ -501,7 +499,6 @@
                             "qubes-db",
                             "qubes-db-libs",
                             "qubes-db-devel",
-                            "python2-qubesdb",
                             "python3-qubesdb",
                             "qubes-db-debuginfo",
                             "qubes-db-debugsource",
@@ -511,7 +508,6 @@
                             "qubes-db",
                             "qubes-db-libs",
                             "qubes-db-devel",
-                            "python2-qubesdb",
                             "python3-qubesdb",
                             "qubes-db-debuginfo",
                             "qubes-db-debugsource",
@@ -521,7 +517,6 @@
                             "qubes-db",
                             "qubes-db-libs",
                             "qubes-db-devel",
-                            "python2-qubesdb",
                             "python3-qubesdb",
                             "qubes-db-debuginfo",
                             "qubes-db-debugsource",
@@ -531,7 +526,6 @@
                             "qubes-db",
                             "qubes-db-libs",
                             "qubes-db-devel",
-                            "python2-qubesdb",
                             "python3-qubesdb",
                             "qubes-db-debuginfo",
                             "qubes-db-debugsource",
@@ -542,7 +536,6 @@
                             "qubesdb-vm",
                             "libqubesdb",
                             "qubesdb-dev",
-                            "python-qubesdb",
                             "python3-qubesdb"
                         ],
                         "buster": [
@@ -550,7 +543,6 @@
                             "qubesdb-vm",
                             "libqubesdb",
                             "qubesdb-dev",
-                            "python-qubesdb",
                             "python3-qubesdb"
                         ],
                         "bullseye": [
@@ -558,7 +550,6 @@
                             "qubesdb-vm",
                             "libqubesdb",
                             "qubesdb-dev",
-                            "python-qubesdb",
                             "python3-qubesdb"
                         ],
                         "whonix-gateway-15": [],
@@ -1640,7 +1631,6 @@
                             "qubes-core-agent-thunar",
                             "qubes-core-agent-debuginfo",
                             "qubes-core-agent-debugsource",
-                            "qubes-core-agent-sysvinit",
                             "qubes-core-agent-systemd"
                         ],
                         "fc31": [
@@ -1656,7 +1646,6 @@
                             "qubes-core-agent-thunar",
                             "qubes-core-agent-debuginfo",
                             "qubes-core-agent-debugsource",
-                            "qubes-core-agent-sysvinit",
                             "qubes-core-agent-systemd"
                         ],
                         "fc32": [
@@ -1672,7 +1661,6 @@
                             "qubes-core-agent-thunar",
                             "qubes-core-agent-debuginfo",
                             "qubes-core-agent-debugsource",
-                            "qubes-core-agent-sysvinit",
                             "qubes-core-agent-systemd"
                         ],
                         "centos7": [
@@ -1688,7 +1676,6 @@
                             "qubes-core-agent-thunar",
                             "qubes-core-agent-debuginfo",
                             "qubes-core-agent-debugsource",
-                            "qubes-core-agent-sysvinit",
                             "qubes-core-agent-systemd"
                         ],
                         "centos8": [
@@ -1704,7 +1691,6 @@
                             "qubes-core-agent-thunar",
                             "qubes-core-agent-debuginfo",
                             "qubes-core-agent-debugsource",
-                            "qubes-core-agent-sysvinit",
                             "qubes-core-agent-systemd"
                         ],
                         "stretch": [
@@ -2858,10 +2844,10 @@
                             "qubes-pdf-converter"
                         ],
                         "centos7": [],
-                        "centos8": [],
-                        "stretch": [
+                        "centos8": [
                             "qubes-pdf-converter"
                         ],
+                        "stretch": [],
                         "buster": [
                             "qubes-pdf-converter"
                         ],
@@ -2888,7 +2874,9 @@
                             "qubes-pdf-converter"
                         ],
                         "centos7": [],
-                        "centos8": [],
+                        "centos8": [
+                            "qubes-pdf-converter"
+                        ],
                         "buster": [
                             "qubes-pdf-converter"
                         ],
@@ -3431,9 +3419,7 @@
                 "4.0": {
                     "branch": "master",
                     "dom0": {
-                        "fc25": [
-                            "qubes-mgmt-salt-dom0-qubes-infrastructure"
-                        ]
+                        "fc25": []
                     },
                     "vms": {
                         "fc30": [],
@@ -3452,9 +3438,7 @@
                 "4.1": {
                     "branch": "master",
                     "dom0": {
-                        "fc32": [
-                            "qubes-mgmt-salt-dom0-qubes-infrastructure"
-                        ]
+                        "fc32": []
                     },
                     "vms": {
                         "fc32": [],
@@ -4155,21 +4139,11 @@
                         ]
                     },
                     "vms": {
-                        "fc30": [
-                            "qubes-desktop-linux-manager"
-                        ],
-                        "fc31": [
-                            "qubes-desktop-linux-manager"
-                        ],
-                        "fc32": [
-                            "qubes-desktop-linux-manager"
-                        ],
-                        "centos7": [
-                            "qubes-desktop-linux-manager"
-                        ],
-                        "centos8": [
-                            "qubes-desktop-linux-manager"
-                        ],
+                        "fc30": [],
+                        "fc31": [],
+                        "fc32": [],
+                        "centos7": [],
+                        "centos8": [],
                         "stretch": [],
                         "buster": [],
                         "bullseye": [],
@@ -4186,18 +4160,10 @@
                         ]
                     },
                     "vms": {
-                        "fc32": [
-                            "qubes-desktop-linux-manager"
-                        ],
-                        "fc33": [
-                            "qubes-desktop-linux-manager"
-                        ],
-                        "centos7": [
-                            "qubes-desktop-linux-manager"
-                        ],
-                        "centos8": [
-                            "qubes-desktop-linux-manager"
-                        ],
+                        "fc32": [],
+                        "fc33": [],
+                        "centos7": [],
+                        "centos8": [],
                         "buster": [],
                         "bullseye": [],
                         "whonix-gateway-15": [],
@@ -4501,20 +4467,8 @@
                         "fc32": [],
                         "centos7": [],
                         "centos8": [],
-                        "stretch": [
-                            "librepo-dev",
-                            "librepo0",
-                            "librepo-doc",
-                            "python3-librepo",
-                            "python3-librepo-doc"
-                        ],
-                        "buster": [
-                            "librepo-dev",
-                            "librepo0",
-                            "librepo-doc",
-                            "python3-librepo",
-                            "python3-librepo-doc"
-                        ],
+                        "stretch": [],
+                        "buster": [],
                         "bullseye": [
                             "librepo-dev",
                             "librepo0",
@@ -4537,13 +4491,7 @@
                         "fc33": [],
                         "centos7": [],
                         "centos8": [],
-                        "buster": [
-                            "librepo-dev",
-                            "librepo0",
-                            "librepo-doc",
-                            "python3-librepo",
-                            "python3-librepo-doc"
-                        ],
+                        "buster": [],
                         "bullseye": [
                             "librepo-dev",
                             "librepo0",
@@ -4572,20 +4520,8 @@
                         "fc32": [],
                         "centos7": [],
                         "centos8": [],
-                        "stretch": [
-                            "libcomps-dev",
-                            "libcomps0",
-                            "libcomps-doc",
-                            "python-libcomps-doc",
-                            "python3-libcomps"
-                        ],
-                        "buster": [
-                            "libcomps-dev",
-                            "libcomps0",
-                            "libcomps-doc",
-                            "python-libcomps-doc",
-                            "python3-libcomps"
-                        ],
+                        "stretch": [],
+                        "buster": [],
                         "bullseye": [
                             "libcomps-dev",
                             "libcomps0",
@@ -4608,13 +4544,7 @@
                         "fc33": [],
                         "centos7": [],
                         "centos8": [],
-                        "buster": [
-                            "libcomps-dev",
-                            "libcomps0",
-                            "libcomps-doc",
-                            "python-libcomps-doc",
-                            "python3-libcomps"
-                        ],
+                        "buster": [],
                         "bullseye": [
                             "libcomps-dev",
                             "libcomps0",
@@ -4643,26 +4573,8 @@
                         "fc32": [],
                         "centos7": [],
                         "centos8": [],
-                        "stretch": [
-                            "libdnf-dev",
-                            "libdnf1",
-                            "libdnf2",
-                            "libdnf2-common",
-                            "libdnf-doc",
-                            "python3-hawkey",
-                            "python3-hawkey-doc",
-                            "python3-libdnf"
-                        ],
-                        "buster": [
-                            "libdnf-dev",
-                            "libdnf1",
-                            "libdnf2",
-                            "libdnf2-common",
-                            "libdnf-doc",
-                            "python3-hawkey",
-                            "python3-hawkey-doc",
-                            "python3-libdnf"
-                        ],
+                        "stretch": [],
+                        "buster": [],
                         "bullseye": [
                             "libdnf-dev",
                             "libdnf1",
@@ -4688,16 +4600,7 @@
                         "fc33": [],
                         "centos7": [],
                         "centos8": [],
-                        "buster": [
-                            "libdnf-dev",
-                            "libdnf1",
-                            "libdnf2",
-                            "libdnf2-common",
-                            "libdnf-doc",
-                            "python3-hawkey",
-                            "python3-hawkey-doc",
-                            "python3-libdnf"
-                        ],
+                        "buster": [],
                         "bullseye": [
                             "libdnf-dev",
                             "libdnf1",
@@ -4729,24 +4632,8 @@
                         "fc32": [],
                         "centos7": [],
                         "centos8": [],
-                        "stretch": [
-                            "dnf",
-                            "dnf-data",
-                            "dnf-doc",
-                            "yum4",
-                            "nextgen-yum4",
-                            "python3-dnf",
-                            "python3-dnf-doc"
-                        ],
-                        "buster": [
-                            "dnf",
-                            "dnf-data",
-                            "dnf-doc",
-                            "yum4",
-                            "nextgen-yum4",
-                            "python3-dnf",
-                            "python3-dnf-doc"
-                        ],
+                        "stretch": [],
+                        "buster": [],
                         "bullseye": [
                             "dnf",
                             "dnf-data",
@@ -4771,15 +4658,7 @@
                         "fc33": [],
                         "centos7": [],
                         "centos8": [],
-                        "buster": [
-                            "dnf",
-                            "dnf-data",
-                            "dnf-doc",
-                            "yum4",
-                            "nextgen-yum4",
-                            "python3-dnf",
-                            "python3-dnf-doc"
-                        ],
+                        "buster": [],
                         "bullseye": [
                             "dnf",
                             "dnf-data",
@@ -6031,15 +5910,9 @@
                         "centos8": [
                             "qubes-mgmt-salt-base"
                         ],
-                        "stretch": [
-                            "qubes-mgmt-salt-base"
-                        ],
-                        "buster": [
-                            "qubes-mgmt-salt-base"
-                        ],
-                        "bullseye": [
-                            "qubes-mgmt-salt-base"
-                        ],
+                        "stretch": [],
+                        "buster": [],
+                        "bullseye": [],
                         "whonix-gateway-15": [],
                         "whonix-workstation-15": [],
                         "archlinux": []
@@ -6065,12 +5938,8 @@
                         "centos8": [
                             "qubes-mgmt-salt-base"
                         ],
-                        "buster": [
-                            "qubes-mgmt-salt-base"
-                        ],
-                        "bullseye": [
-                            "qubes-mgmt-salt-base"
-                        ],
+                        "buster": [],
+                        "bullseye": [],
                         "whonix-gateway-15": [],
                         "whonix-workstation-15": [],
                         "archlinux": [],
@@ -6105,15 +5974,9 @@
                         "centos8": [
                             "qubes-mgmt-salt-base-topd"
                         ],
-                        "stretch": [
-                            "qubes-mgmt-salt-base-topd"
-                        ],
-                        "buster": [
-                            "qubes-mgmt-salt-base-topd"
-                        ],
-                        "bullseye": [
-                            "qubes-mgmt-salt-base-topd"
-                        ],
+                        "stretch": [],
+                        "buster": [],
+                        "bullseye": [],
                         "whonix-gateway-15": [],
                         "whonix-workstation-15": [],
                         "archlinux": []
@@ -6139,12 +6002,8 @@
                         "centos8": [
                             "qubes-mgmt-salt-base-topd"
                         ],
-                        "buster": [
-                            "qubes-mgmt-salt-base-topd"
-                        ],
-                        "bullseye": [
-                            "qubes-mgmt-salt-base-topd"
-                        ],
+                        "buster": [],
+                        "bullseye": [],
                         "whonix-gateway-15": [],
                         "whonix-workstation-15": [],
                         "archlinux": [],
@@ -6179,15 +6038,9 @@
                         "centos8": [
                             "qubes-mgmt-salt-base-config"
                         ],
-                        "stretch": [
-                            "qubes-mgmt-salt-base-config"
-                        ],
-                        "buster": [
-                            "qubes-mgmt-salt-base-config"
-                        ],
-                        "bullseye": [
-                            "qubes-mgmt-salt-base-config"
-                        ],
+                        "stretch": [],
+                        "buster": [],
+                        "bullseye": [],
                         "whonix-gateway-15": [],
                         "whonix-workstation-15": [],
                         "archlinux": []
@@ -6213,12 +6066,8 @@
                         "centos8": [
                             "qubes-mgmt-salt-base-config"
                         ],
-                        "buster": [
-                            "qubes-mgmt-salt-base-config"
-                        ],
-                        "bullseye": [
-                            "qubes-mgmt-salt-base-config"
-                        ],
+                        "buster": [],
+                        "bullseye": [],
                         "whonix-gateway-15": [],
                         "whonix-workstation-15": [],
                         "archlinux": [],

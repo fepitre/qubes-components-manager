@@ -12,24 +12,8 @@
                     "fc32": [],
                     "centos7": [],
                     "centos8": [],
-                    "stretch": [
-                        "dnf",
-                        "dnf-data",
-                        "dnf-doc",
-                        "yum4",
-                        "nextgen-yum4",
-                        "python3-dnf",
-                        "python3-dnf-doc"
-                    ],
-                    "buster": [
-                        "dnf",
-                        "dnf-data",
-                        "dnf-doc",
-                        "yum4",
-                        "nextgen-yum4",
-                        "python3-dnf",
-                        "python3-dnf-doc"
-                    ],
+                    "stretch": [],
+                    "buster": [],
                     "bullseye": [
                         "dnf",
                         "dnf-data",
@@ -54,15 +38,7 @@
                     "fc33": [],
                     "centos7": [],
                     "centos8": [],
-                    "buster": [
-                        "dnf",
-                        "dnf-data",
-                        "dnf-doc",
-                        "yum4",
-                        "nextgen-yum4",
-                        "python3-dnf",
-                        "python3-dnf-doc"
-                    ],
+                    "buster": [],
                     "bullseye": [
                         "dnf",
                         "dnf-data",
