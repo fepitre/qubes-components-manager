@@ -34,13 +34,15 @@ class RPMParser:
                 fd_spec.write(content.encode('utf-8'))
                 fd_spec.seek(0)
                 spec = fd_spec.name
-                if os.environ.get('DEBUG') == 1:
-                    cmd = "/usr/bin/rpmspec -q --qf '\{\"name\": \"%{name}\",\"arch\": \"%{arch}\"\}\n' " + spec
-                else:
-                    cmd = "/usr/bin/rpmspec -q --qf '\{\"name\": \"%{name}\",\"arch\": \"%{arch}\"\}\n' " + spec + " 2>/dev/null"
-                output = subprocess.check_output([cmd], cwd=curr_dir,
-                                                 shell=True,
-                                                 text=True).rstrip('\n')
+                cmd = ["/usr/bin/rpmspec", "-q", "--qf",
+                       '\{"name": "%{name}", "arch": "%{arch}"\}\n', spec]
+                kwargs = {
+                    "cwd": curr_dir,
+                    "text": True
+                }
+                if os.environ.get('DEBUG') != 1:
+                    kwargs["stderr"] = subprocess.DEVNULL
+                output = subprocess.check_output(cmd, **kwargs).rstrip('\n')
                 return output.split('\n')
 
     @staticmethod
