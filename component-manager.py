@@ -23,13 +23,13 @@ def get_args():
         "--distfile",
         required=False,
         default='distfile.json',
-        help="Input distribution file ('distfile.json')"
+        help="Input distribution file ('distfile.json')."
     )
     parser.add_argument(
         "--components-folder",
         required=False,
         default=os.path.join(os.getcwd(), 'components'),
-        help="Input components folder ('components/*.json')"
+        help="Input components folder ('components/*.json')."
     )
     parser.add_argument(
         "--qubes-src",
@@ -50,18 +50,23 @@ def get_args():
         "--update-distfile",
         required=False,
         action="store_true",
-        help="Update distfile"
+        help="Update distfile."
     )
     parser.add_argument(
         "--update-pkg-list",
         required=False,
         action="store_true",
-        help="Update packages list"
+        help="Update packages list."
     )
     parser.add_argument(
         "--generate-conf",
         required=False,
         help="Destination file for generating qubes-builder configuration file."
+    )
+    parser.add_argument(
+        "--add-component",
+        required=False,
+        help="Add a skeleton component file in components folder."
     )
 
     # content information
@@ -69,13 +74,13 @@ def get_args():
         "--get-packages-dom0",
         required=False,
         action='store_true',
-        help="Show packages names for dom0. To be used with --dist"
+        help="Show packages names for dom0. To be used with --dist."
     )
     parser.add_argument(
         "--get-packages-vms",
         required=False,
         action='store_true',
-        help="Show packages names for VMs. To be used with --dist"
+        help="Show packages names for VMs. To be used with --dist."
     )
     parser.add_argument(
         "--dist",
@@ -87,7 +92,8 @@ def get_args():
 
 
 class ComponentManagerCli:
-    def __init__(self, release, qubes_src, distfile, components):
+    def __init__(self, release, qubes_src, distfile, components,
+                 components_folder):
         self.release = release
 
         self.data = {}
@@ -99,6 +105,7 @@ class ComponentManagerCli:
         self.qubes_src = qubes_src
         self.distfile = distfile
         self.components = components
+        self.components_folder = components_folder
 
         self.components = []
         self.dom0 = []
@@ -179,9 +186,11 @@ class ComponentManagerCli:
                 continue
             component.fetch_all_packages(self.dom0, self.vms)
 
-    def dump_components(self, folder, components):
+    def dump_components(self, components):
         for component in self.get_components_from_name(components):
-            with open('%s/%s.json' % (folder, component.name)) as fd:
+            component_file = os.path.join(
+                self.components_folder, '%s.json' % component.name)
+            with open(component_file) as fd:
                 content = json.loads(fd.read())
 
             if content[component.name]["releases"].get(self.release, None):
@@ -190,7 +199,7 @@ class ComponentManagerCli:
                 content[component.name]["releases"][self.release]["vms"] = \
                     component.get_packages_names_vms(self.vms)
 
-            with open('%s/%s.json' % (folder, component.name), 'w') as fd:
+            with open(component_file, 'w') as fd:
                 fd.write(json.dumps(content, indent=4))
 
     def get_branches_conf(self):
@@ -259,14 +268,16 @@ class ComponentManagerCli:
             fd.write(generated_conf)
 
     # distfile.json (packages order + releases information) + components/*.json -> distfile.json
-    def update_distfile(self, folder):
+    def update_distfile(self):
         with open(self.distfile) as fd:
             data = json.loads(fd.read())
 
         for component in data["components"]:
             # if json is missing we have at least content from distfile
             try:
-                with open('%s/%s.json' % (folder, component)) as fd:
+                component_file = os.path.join(
+                    self.components_folder, '%s.json' % component.name)
+                with open(component_file) as fd:
                     data_component = json.loads(fd.read())
                     data["components"][component] = data_component[component]
             except FileNotFoundError:
@@ -286,11 +297,35 @@ class ComponentManagerCli:
                     pkgs[component.name] = component.get_packages_vms(dist)
         return pkgs
 
+    def add_component(self, name):
+        content = {
+            name: {
+                "releases": {},
+                "dom0": {},
+                "vms": {}
+            }
+        }
+        for release in self.data["releases"].keys():
+            if self.data["releases"][release].get("devel", 0):
+                branch = 'master'
+            else:
+                branch = 'release%s' % release
+            content[name]["releases"][release] = {
+                "branch": branch
+            }
+        component_file = os.path.join(self.components_folder, '%s.json' % name)
+        with open(component_file, 'w') as fd:
+            fd.write(json.dumps(content, indent=4))
+
 
 def main():
     args = get_args()
-    cli = ComponentManagerCli(args.release, os.path.abspath(args.qubes_src),
-                              args.distfile, args.components)
+    cli = ComponentManagerCli(release=args.release,
+                              qubes_src=os.path.abspath(args.qubes_src),
+                              distfile=args.distfile,
+                              components=args.components,
+                              components_folder=args.components_folder
+                              )
 
     if not os.path.exists(args.distfile):
         print("ERROR: Cannot find distfile %s" % args.distfile)
@@ -303,17 +338,19 @@ def main():
     cli.load_components()
     if args.update_distfile:
         # in case of local modification in components/*.json
-        cli.update_distfile(args.components_folder)
+        cli.update_distfile()
     elif args.update_pkg_list:
         # fetch packages
         cli.fetch_packages(args.components)
         # update components/*.json
-        cli.dump_components(args.components_folder, args.components)
+        cli.dump_components(args.components)
         # update distfile.json
-        cli.update_distfile(args.components_folder)
+        cli.update_distfile()
     elif args.generate_conf:
-        cli.update_distfile(args.components_folder)
+        cli.update_distfile()
         cli.generate_conf(args.generate_conf)
+    elif args.add_component:
+        cli.add_component(args.add_component)
     elif args.dist:
         if args.get_packages_dom0:
             cli.fetch_packages(args.components)
