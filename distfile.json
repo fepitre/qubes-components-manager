@@ -4488,6 +4488,315 @@
                 }
             }
         },
+        "librepo": {
+            "releases": {
+                "4.0": {
+                    "branch": "master",
+                    "dom0": {
+                        "fc25": []
+                    },
+                    "vms": {
+                        "fc30": [],
+                        "fc31": [],
+                        "fc32": [],
+                        "centos7": [],
+                        "centos8": [],
+                        "stretch": [
+                            "librepo-dev",
+                            "librepo0",
+                            "librepo-doc",
+                            "python3-librepo",
+                            "python3-librepo-doc"
+                        ],
+                        "buster": [
+                            "librepo-dev",
+                            "librepo0",
+                            "librepo-doc",
+                            "python3-librepo",
+                            "python3-librepo-doc"
+                        ],
+                        "bullseye": [
+                            "librepo-dev",
+                            "librepo0",
+                            "librepo-doc",
+                            "python3-librepo",
+                            "python3-librepo-doc"
+                        ],
+                        "whonix-gateway-15": [],
+                        "whonix-workstation-15": [],
+                        "archlinux": []
+                    }
+                },
+                "4.1": {
+                    "branch": "master",
+                    "dom0": {
+                        "fc32": []
+                    },
+                    "vms": {
+                        "fc32": [],
+                        "fc33": [],
+                        "centos7": [],
+                        "centos8": [],
+                        "buster": [
+                            "librepo-dev",
+                            "librepo0",
+                            "librepo-doc",
+                            "python3-librepo",
+                            "python3-librepo-doc"
+                        ],
+                        "bullseye": [
+                            "librepo-dev",
+                            "librepo0",
+                            "librepo-doc",
+                            "python3-librepo",
+                            "python3-librepo-doc"
+                        ],
+                        "whonix-gateway-15": [],
+                        "whonix-workstation-15": [],
+                        "archlinux": [],
+                        "gentoo": []
+                    }
+                }
+            }
+        },
+        "libcomps": {
+            "releases": {
+                "4.0": {
+                    "branch": "master",
+                    "dom0": {
+                        "fc25": []
+                    },
+                    "vms": {
+                        "fc30": [],
+                        "fc31": [],
+                        "fc32": [],
+                        "centos7": [],
+                        "centos8": [],
+                        "stretch": [
+                            "libcomps-dev",
+                            "libcomps0",
+                            "libcomps-doc",
+                            "python-libcomps-doc",
+                            "python3-libcomps"
+                        ],
+                        "buster": [
+                            "libcomps-dev",
+                            "libcomps0",
+                            "libcomps-doc",
+                            "python-libcomps-doc",
+                            "python3-libcomps"
+                        ],
+                        "bullseye": [
+                            "libcomps-dev",
+                            "libcomps0",
+                            "libcomps-doc",
+                            "python-libcomps-doc",
+                            "python3-libcomps"
+                        ],
+                        "whonix-gateway-15": [],
+                        "whonix-workstation-15": [],
+                        "archlinux": []
+                    }
+                },
+                "4.1": {
+                    "branch": "master",
+                    "dom0": {
+                        "fc32": []
+                    },
+                    "vms": {
+                        "fc32": [],
+                        "fc33": [],
+                        "centos7": [],
+                        "centos8": [],
+                        "buster": [
+                            "libcomps-dev",
+                            "libcomps0",
+                            "libcomps-doc",
+                            "python-libcomps-doc",
+                            "python3-libcomps"
+                        ],
+                        "bullseye": [
+                            "libcomps-dev",
+                            "libcomps0",
+                            "libcomps-doc",
+                            "python-libcomps-doc",
+                            "python3-libcomps"
+                        ],
+                        "whonix-gateway-15": [],
+                        "whonix-workstation-15": [],
+                        "archlinux": [],
+                        "gentoo": []
+                    }
+                }
+            }
+        },
+        "libdnf": {
+            "releases": {
+                "4.0": {
+                    "branch": "master",
+                    "dom0": {
+                        "fc25": []
+                    },
+                    "vms": {
+                        "fc30": [],
+                        "fc31": [],
+                        "fc32": [],
+                        "centos7": [],
+                        "centos8": [],
+                        "stretch": [
+                            "libdnf-dev",
+                            "libdnf1",
+                            "libdnf2",
+                            "libdnf2-common",
+                            "libdnf-doc",
+                            "python3-hawkey",
+                            "python3-hawkey-doc",
+                            "python3-libdnf"
+                        ],
+                        "buster": [
+                            "libdnf-dev",
+                            "libdnf1",
+                            "libdnf2",
+                            "libdnf2-common",
+                            "libdnf-doc",
+                            "python3-hawkey",
+                            "python3-hawkey-doc",
+                            "python3-libdnf"
+                        ],
+                        "bullseye": [
+                            "libdnf-dev",
+                            "libdnf1",
+                            "libdnf2",
+                            "libdnf2-common",
+                            "libdnf-doc",
+                            "python3-hawkey",
+                            "python3-hawkey-doc",
+                            "python3-libdnf"
+                        ],
+                        "whonix-gateway-15": [],
+                        "whonix-workstation-15": [],
+                        "archlinux": []
+                    }
+                },
+                "4.1": {
+                    "branch": "master",
+                    "dom0": {
+                        "fc32": []
+                    },
+                    "vms": {
+                        "fc32": [],
+                        "fc33": [],
+                        "centos7": [],
+                        "centos8": [],
+                        "buster": [
+                            "libdnf-dev",
+                            "libdnf1",
+                            "libdnf2",
+                            "libdnf2-common",
+                            "libdnf-doc",
+                            "python3-hawkey",
+                            "python3-hawkey-doc",
+                            "python3-libdnf"
+                        ],
+                        "bullseye": [
+                            "libdnf-dev",
+                            "libdnf1",
+                            "libdnf2",
+                            "libdnf2-common",
+                            "libdnf-doc",
+                            "python3-hawkey",
+                            "python3-hawkey-doc",
+                            "python3-libdnf"
+                        ],
+                        "whonix-gateway-15": [],
+                        "whonix-workstation-15": [],
+                        "archlinux": [],
+                        "gentoo": []
+                    }
+                }
+            }
+        },
+        "dnf": {
+            "releases": {
+                "4.0": {
+                    "branch": "master",
+                    "dom0": {
+                        "fc25": []
+                    },
+                    "vms": {
+                        "fc30": [],
+                        "fc31": [],
+                        "fc32": [],
+                        "centos7": [],
+                        "centos8": [],
+                        "stretch": [
+                            "dnf",
+                            "dnf-data",
+                            "dnf-doc",
+                            "yum4",
+                            "nextgen-yum4",
+                            "python3-dnf",
+                            "python3-dnf-doc"
+                        ],
+                        "buster": [
+                            "dnf",
+                            "dnf-data",
+                            "dnf-doc",
+                            "yum4",
+                            "nextgen-yum4",
+                            "python3-dnf",
+                            "python3-dnf-doc"
+                        ],
+                        "bullseye": [
+                            "dnf",
+                            "dnf-data",
+                            "dnf-doc",
+                            "yum4",
+                            "nextgen-yum4",
+                            "python3-dnf",
+                            "python3-dnf-doc"
+                        ],
+                        "whonix-gateway-15": [],
+                        "whonix-workstation-15": [],
+                        "archlinux": []
+                    }
+                },
+                "4.1": {
+                    "branch": "master",
+                    "dom0": {
+                        "fc32": []
+                    },
+                    "vms": {
+                        "fc32": [],
+                        "fc33": [],
+                        "centos7": [],
+                        "centos8": [],
+                        "buster": [
+                            "dnf",
+                            "dnf-data",
+                            "dnf-doc",
+                            "yum4",
+                            "nextgen-yum4",
+                            "python3-dnf",
+                            "python3-dnf-doc"
+                        ],
+                        "bullseye": [
+                            "dnf",
+                            "dnf-data",
+                            "dnf-doc",
+                            "yum4",
+                            "nextgen-yum4",
+                            "python3-dnf",
+                            "python3-dnf-doc"
+                        ],
+                        "whonix-gateway-15": [],
+                        "whonix-workstation-15": [],
+                        "archlinux": [],
+                        "gentoo": []
+                    }
+                }
+            }
+        },
         "linux-template-builder": {
             "releases": {
                 "4.0": {

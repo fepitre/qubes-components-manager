@@ -1,0 +1,73 @@
+{
+    "libcomps": {
+        "releases": {
+            "4.0": {
+                "branch": "master",
+                "dom0": {
+                    "fc25": []
+                },
+                "vms": {
+                    "fc30": [],
+                    "fc31": [],
+                    "fc32": [],
+                    "centos7": [],
+                    "centos8": [],
+                    "stretch": [
+                        "libcomps-dev",
+                        "libcomps0",
+                        "libcomps-doc",
+                        "python-libcomps-doc",
+                        "python3-libcomps"
+                    ],
+                    "buster": [
+                        "libcomps-dev",
+                        "libcomps0",
+                        "libcomps-doc",
+                        "python-libcomps-doc",
+                        "python3-libcomps"
+                    ],
+                    "bullseye": [
+                        "libcomps-dev",
+                        "libcomps0",
+                        "libcomps-doc",
+                        "python-libcomps-doc",
+                        "python3-libcomps"
+                    ],
+                    "whonix-gateway-15": [],
+                    "whonix-workstation-15": [],
+                    "archlinux": []
+                }
+            },
+            "4.1": {
+                "branch": "master",
+                "dom0": {
+                    "fc32": []
+                },
+                "vms": {
+                    "fc32": [],
+                    "fc33": [],
+                    "centos7": [],
+                    "centos8": [],
+                    "buster": [
+                        "libcomps-dev",
+                        "libcomps0",
+                        "libcomps-doc",
+                        "python-libcomps-doc",
+                        "python3-libcomps"
+                    ],
+                    "bullseye": [
+                        "libcomps-dev",
+                        "libcomps0",
+                        "libcomps-doc",
+                        "python-libcomps-doc",
+                        "python3-libcomps"
+                    ],
+                    "whonix-gateway-15": [],
+                    "whonix-workstation-15": [],
+                    "archlinux": [],
+                    "gentoo": []
+                }
+            }
+        }
+    }
+}
