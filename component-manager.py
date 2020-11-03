@@ -39,7 +39,8 @@ def get_args():
     )
     parser.add_argument(
         "--components",
-        required=True,
+        required=False,
+        default='all',
         nargs='+',
         help="List of components to process for all distributions. For "
              "processing all components use value 'all'. "
@@ -70,6 +71,12 @@ def get_args():
     )
 
     # content information
+    parser.add_argument(
+        "--get-packages",
+        required=False,
+        action='store_true',
+        help="Show packages names for dom0 and VMs."
+    )
     parser.add_argument(
         "--get-packages-dom0",
         required=False,
@@ -286,15 +293,22 @@ class ComponentManagerCli:
         with open(self.distfile, 'w') as fd:
             fd.write(json.dumps(data, indent=4))
 
-    def get_packages(self, dist, components, dom0=False, vm=False):
+    def get_packages(self, components, dom0=False, vm=False, dist=None):
         pkgs = {}
-        if dom0 or vm:
+        if (dom0 or vm) and dist:
             dist = QubesDist(dist)
             for component in self.get_components_from_name(components):
                 if dom0:
                     pkgs[component.name] = component.get_packages_dom0(dist)
                 elif vm:
                     pkgs[component.name] = component.get_packages_vms(dist)
+        else:
+            for component in self.get_components_from_name(components):
+                pkgs[component.name] = {"dom0": {}, "vms": {}}
+                for dist in self.get_dom0():
+                    pkgs[component.name]["dom0"][dist.name] = component.get_packages_dom0(dist)
+                for dist in self.get_vms():
+                    pkgs[component.name]["vms"][dist.name] = component.get_packages_vms(dist)
         return pkgs
 
     def add_component(self, name):
@@ -351,17 +365,21 @@ def main():
         cli.generate_conf(args.generate_conf)
     elif args.add_component:
         cli.add_component(args.add_component)
+    elif args.get_packages:
+        cli.fetch_packages(args.components)
+        print(json.dumps(cli.get_packages(args.components), indent=4))
     elif args.dist:
         if args.get_packages_dom0:
             cli.fetch_packages(args.components)
             print(json.dumps(
-                cli.get_packages(args.dist, args.components, dom0=True),
+                cli.get_packages(args.components, dom0=True, dist=args.dist),
                 indent=4)
             )
         elif args.get_packages_vms:
             cli.fetch_packages(args.components)
             print(json.dumps(
-                cli.get_packages(args.dist, args.components, vm=True), indent=4)
+                cli.get_packages(args.components, vm=True, dist=args.dist),
+                indent=4)
             )
 
     # elif args.get_pkg_list():
