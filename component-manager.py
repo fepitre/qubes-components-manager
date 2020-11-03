@@ -14,7 +14,7 @@ from lib.dist import QubesDist
 def get_args():
     parser = argparse.ArgumentParser()
 
-    # mandatory arguments
+    # base arguments
     parser.add_argument(
         "--release",
         default="4.1"
@@ -33,7 +33,7 @@ def get_args():
     )
     parser.add_argument(
         "--qubes-src",
-        required=True,
+        required=False,
         help="Local path of Qubes sources corresponding to the requested "
              "release."
     )
@@ -99,8 +99,8 @@ def get_args():
 
 
 class ComponentManagerCli:
-    def __init__(self, release, qubes_src, distfile, components,
-                 components_folder):
+    def __init__(self, release, distfile, components, components_folder,
+                 qubes_src=None):
         self.release = release
 
         self.data = {}
@@ -137,7 +137,9 @@ class ComponentManagerCli:
             if release:
                 branch = release.get("branch", None)
                 if branch:
-                    orig_src = os.path.join(self.qubes_src, name)
+                    orig_src = None
+                    if self.qubes_src:
+                        orig_src = os.path.join(self.qubes_src, name)
                     kwargs = self.data["components"][name]
                     del kwargs["releases"]
                     self.components.append(
@@ -319,8 +321,6 @@ class ComponentManagerCli:
         content = {
             name: {
                 "releases": {},
-                "dom0": {},
-                "vms": {}
             }
         }
         for release in self.data["releases"].keys():
@@ -329,7 +329,9 @@ class ComponentManagerCli:
             else:
                 branch = 'release%s' % release
             content[name]["releases"][release] = {
-                "branch": branch
+                "branch": branch,
+                "dom0": {},
+                "vms": {}
             }
         component_file = os.path.join(self.components_folder, '%s.json' % name)
         with open(component_file, 'w') as fd:
@@ -339,7 +341,6 @@ class ComponentManagerCli:
 def main():
     args = get_args()
     cli = ComponentManagerCli(release=args.release,
-                              qubes_src=os.path.abspath(args.qubes_src),
                               distfile=args.distfile,
                               components=args.components,
                               components_folder=args.components_folder
@@ -356,34 +357,43 @@ def main():
     if args.update_distfile:
         # in case of local modification in components/*.json
         cli.update_distfile()
-    else:
+        return
+
+    if args.add_component:
         cli.load_components()
-        if args.update_pkg_list:
-            # fetch packages
+        cli.add_component(args.add_component)
+        return
+
+    if not os.path.exists(args.qubes_src):
+        print("ERROR: Cannot find qubes-src folder")
+        return 1
+
+    cli.qubes_src = os.path.abspath(args.qubes_src)
+    cli.load_components()
+    if args.update_pkg_list:
+        # fetch packages
+        cli.fetch_packages(args.components)
+        # update components/*.json
+        cli.dump_components(args.components)
+        # update distfile.json
+        cli.update_distfile()
+    elif args.generate_conf:
+        cli.update_distfile()
+        cli.generate_conf(args.generate_conf)
+    elif args.get_packages:
+        cli.fetch_packages(args.components)
+        print(json.dumps(cli.get_packages(args.components), indent=4))
+    elif args.dist:
+        if args.get_packages_dom0:
             cli.fetch_packages(args.components)
-            # update components/*.json
-            cli.dump_components(args.components)
-            # update distfile.json
-            cli.update_distfile()
-        elif args.generate_conf:
-            cli.update_distfile()
-            cli.generate_conf(args.generate_conf)
-        elif args.get_packages:
+            print(json.dumps(cli.get_packages(
+                args.components, dom0=True, dist=args.dist), indent=4)
+            )
+        elif args.get_packages_vms:
             cli.fetch_packages(args.components)
-            print(json.dumps(cli.get_packages(args.components), indent=4))
-        elif args.add_component:
-            cli.add_component(args.add_component)
-        elif args.dist:
-            if args.get_packages_dom0:
-                cli.fetch_packages(args.components)
-                print(json.dumps(cli.get_packages(
-                    args.components, dom0=True, dist=args.dist), indent=4)
-                )
-            elif args.get_packages_vms:
-                cli.fetch_packages(args.components)
-                print(json.dumps(cli.get_packages(
-                    args.components, vm=True, dist=args.dist), indent=4)
-                )
+            print(json.dumps(cli.get_packages(
+                args.components, vm=True, dist=args.dist), indent=4)
+            )
 
     # elif args.get_pkg_list():
     #     if not args.qubes_src:

@@ -17,4 +17,22 @@ qubes-component-manager
 
 # generate conf
 ./component-manager.py --release 4.0 --qubes-src ../qubes-builder-4.0/qubes-src/ --components all --generate-conf qubes-os-r4.0.conf
+
+# add new package
+1) generate component file
+
+    ./component-manager.py --components-folder components --add-component libdnf
+
+2) edit components/libdnf.json for adjusting information
+3) add json entry key into `distfile.json` at the corresponding order in COMPONENTS:
+
+     "libdnf": {}
+
+4) update distfile
+
+    ./component-manager.py --components-folder components --distfile distfile.json --update-distfile
+
+5) generate packages list
+
+    ./component-manager.py --release 4.1 --qubes-src ../qubes-builder-4.1/qubes-src/ --distfile distfile.json --components libdnf --update-pkg-list
 ```
