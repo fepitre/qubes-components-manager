@@ -36,14 +36,12 @@ class QubesComponent:
         return self.version
 
     def get_release(self):
-        release = 1
         if not self.release:
             try:
                 with open(os.path.join(self.orig_src, 'rel')) as fd:
                     release = fd.read().split('\n')[0]
             except FileNotFoundError:
                 pass
-        self.release = release
         return self.release
 
     def get_maintainers(self):
@@ -60,22 +58,30 @@ class QubesComponent:
 
     def get_nvr_rpm(self, name, dist, arch):
         version = self.get_version()
+        release = self.get_release()
+        if not release:
+            release = 1
         rpm = None
         if version:
             rpm = "{name}-{version}-{release}.{dist}.{arch}.rpm".format(
-                name=name, version=version, release=self.get_release(),
-                dist=dist,
+                name=name, version=version, release=release, dist=dist,
                 arch=arch)
         return rpm
 
     def get_nvr_deb(self, name, dist, arch, update=1):
         debian_ver = DEBIAN[dist].split('-')[1]
         version = self.get_version()
+        release = self.get_release()
         deb = None
         if version:
-            deb = "{name}_{version}-{release}+deb{debian_ver}u{update}.{arch}.deb".format(
-                name=name, version=version, release=self.get_release(),
-                debian_ver=debian_ver, arch=arch, update=update)
+            if release:
+                deb = "{name}_{version}-{release}+deb{debian_ver}u{update}.{arch}.deb".format(
+                    name=name, version=version, release=release,
+                    debian_ver=debian_ver, arch=arch, update=update)
+            else:
+                deb = "{name}_{version}+deb{debian_ver}u{update}.{arch}.deb".format(
+                    name=name, version=version, debian_ver=debian_ver,
+                    arch=arch, update=update)
         return deb
 
     # WIP: Refactor below
@@ -137,9 +143,11 @@ class QubesComponent:
         for component in components.get(dist.name, []):
             pkg = None
             if dist.is_rpm():
-                pkg = self.get_nvr_rpm(component['name'], dist.name, component['arch'][0])
+                pkg = self.get_nvr_rpm(component['name'], dist.name,
+                                       component['arch'][0])
             if dist.is_deb():
-                pkg = self.get_nvr_deb(component['name'], dist.name, component['arch'][0])
+                pkg = self.get_nvr_deb(component['name'], dist.name,
+                                       component['arch'][0])
             if pkg:
                 pkgs.append(pkg)
         return pkgs
