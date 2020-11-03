@@ -6569,6 +6569,31 @@
                     }
                 }
             }
+        },
+        "dist-upgrade": {
+            "releases": {
+                "4.0": {
+                    "branch": "release4.0",
+                    "dom0": {
+                        "fc25": [
+                            "qubes-dist-upgrade"
+                        ]
+                    },
+                    "vms": {
+                        "fc30": [],
+                        "fc31": [],
+                        "fc32": [],
+                        "centos7": [],
+                        "centos8": [],
+                        "stretch": [],
+                        "buster": [],
+                        "bullseye": [],
+                        "whonix-gateway-15": [],
+                        "whonix-workstation-15": [],
+                        "archlinux": []
+                    }
+                }
+            }
         }
     }
 }
