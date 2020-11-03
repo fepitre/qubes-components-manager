@@ -19,7 +19,8 @@ print-%  : ; @echo $($*)
             fd.write(content.encode('utf-8'))
             fd.seek(0)
             cmd = "make -f %s print-%s" % (fd.name, var)
-            output = subprocess.check_output([cmd], cwd=curr_dir, shell=True, text=True, env=env)
+            output = subprocess.check_output([cmd], cwd=curr_dir, shell=True,
+                                             text=True, env=env)
             value = output.rstrip('\n')
 
     return value
@@ -41,8 +42,8 @@ def get_deb_control_file(component_path, vm):
     makefile_path = os.path.join(component_path, 'Makefile.builder')
     env = os.environ.copy()
     env.update({'PACKAGE_SET': 'vm', 'DISTRIBUTION': 'debian', 'DIST': vm})
-    debian_build_dirs = get_makefile_value(makefile_path, 'DEBIAN_BUILD_DIRS',
-                                           env)
+    debian_build_dirs = get_makefile_value(
+        makefile_path, 'DEBIAN_BUILD_DIRS', env)
     control = None
     if debian_build_dirs:
         control = os.path.join(debian_build_dirs, 'control')
