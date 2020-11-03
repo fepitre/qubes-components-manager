@@ -1238,6 +1238,7 @@
             }
         },
         "python-qasync": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -1298,7 +1299,6 @@
             }
         },
         "python-panflute": {
-            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "master",
@@ -1620,7 +1620,6 @@
             }
         },
         "core-agent-linux": {
-            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -2198,6 +2197,7 @@
             }
         },
         "gui-common": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -4318,6 +4318,7 @@
             }
         },
         "linux-gbulb": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "master",
@@ -4402,6 +4403,7 @@
             }
         },
         "linux-scrypt": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "master",
@@ -4596,6 +4598,7 @@
             }
         },
         "qubes-release": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
