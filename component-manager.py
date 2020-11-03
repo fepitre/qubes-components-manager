@@ -283,7 +283,7 @@ class ComponentManagerCli:
             # if json is missing we have at least content from distfile
             try:
                 component_file = os.path.join(
-                    self.components_folder, '%s.json' % component.name)
+                    self.components_folder, '%s.json' % component)
                 with open(component_file) as fd:
                     data_component = json.loads(fd.read())
                     data["components"][component] = data_component[component]
