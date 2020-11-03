@@ -28,11 +28,13 @@ print-%  : ; @echo $($*)
 
 def get_rpm_spec_files(component_path, dom0=None, vm=None):
     makefile_path = os.path.join(component_path, 'Makefile.builder')
-    env = None
+    env = {
+        "COMPONENT": os.path.basename(component_path)
+    }
     if dom0:
-        env = {'PACKAGE_SET': 'dom0', 'DIST': dom0}
+        env.update({'PACKAGE_SET': 'dom0', 'DIST': dom0})
     if vm:
-        env = {'PACKAGE_SET': 'vm', 'DIST': vm}
+        env.update({'PACKAGE_SET': 'vm', 'DIST': vm})
 
     specs = get_makefile_value(makefile_path, 'RPM_SPEC_FILES', env)
     return specs.split()
