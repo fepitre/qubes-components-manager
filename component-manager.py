@@ -306,9 +306,13 @@ class ComponentManagerCli:
             for component in self.get_components_from_name(components):
                 pkgs[component.name] = {"dom0": {}, "vms": {}}
                 for dist in self.get_dom0():
-                    pkgs[component.name]["dom0"][dist.name] = component.get_packages_dom0(dist)
+                    if not dist.name.startswith('whonix'):
+                        pkgs[component.name]["dom0"][dist.name] = \
+                            component.get_packages_dom0(dist)
                 for dist in self.get_vms():
-                    pkgs[component.name]["vms"][dist.name] = component.get_packages_vms(dist)
+                    if not dist.name.startswith('whonix'):
+                        pkgs[component.name]["vms"][dist.name] = \
+                            component.get_packages_vms(dist)
         return pkgs
 
     def add_component(self, name):
