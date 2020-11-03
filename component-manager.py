@@ -353,38 +353,37 @@ def main():
             "ERROR: Cannot find components folder %s" % args.components_folder)
         return 1
 
-    cli.load_components()
     if args.update_distfile:
         # in case of local modification in components/*.json
         cli.update_distfile()
-    elif args.update_pkg_list:
-        # fetch packages
-        cli.fetch_packages(args.components)
-        # update components/*.json
-        cli.dump_components(args.components)
-        # update distfile.json
-        cli.update_distfile()
-    elif args.generate_conf:
-        cli.update_distfile()
-        cli.generate_conf(args.generate_conf)
-    elif args.add_component:
-        cli.add_component(args.add_component)
-    elif args.get_packages:
-        cli.fetch_packages(args.components)
-        print(json.dumps(cli.get_packages(args.components), indent=4))
-    elif args.dist:
-        if args.get_packages_dom0:
+    else:
+        cli.load_components()
+        if args.update_pkg_list:
+            # fetch packages
             cli.fetch_packages(args.components)
-            print(json.dumps(
-                cli.get_packages(args.components, dom0=True, dist=args.dist),
-                indent=4)
-            )
-        elif args.get_packages_vms:
+            # update components/*.json
+            cli.dump_components(args.components)
+            # update distfile.json
+            cli.update_distfile()
+        elif args.generate_conf:
+            cli.update_distfile()
+            cli.generate_conf(args.generate_conf)
+        elif args.get_packages:
             cli.fetch_packages(args.components)
-            print(json.dumps(
-                cli.get_packages(args.components, vm=True, dist=args.dist),
-                indent=4)
-            )
+            print(json.dumps(cli.get_packages(args.components), indent=4))
+        elif args.add_component:
+            cli.add_component(args.add_component)
+        elif args.dist:
+            if args.get_packages_dom0:
+                cli.fetch_packages(args.components)
+                print(json.dumps(cli.get_packages(
+                    args.components, dom0=True, dist=args.dist), indent=4)
+                )
+            elif args.get_packages_vms:
+                cli.fetch_packages(args.components)
+                print(json.dumps(cli.get_packages(
+                    args.components, vm=True, dist=args.dist), indent=4)
+                )
 
     # elif args.get_pkg_list():
     #     if not args.qubes_src:
