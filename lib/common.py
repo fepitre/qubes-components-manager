@@ -11,7 +11,9 @@ def get_makefile_value(makefile, var, env=None):
         with tempfile.NamedTemporaryFile(dir=curr_dir) as fd:
             content = """
 ORIG_SRC ?= {orig_src}
-include {orig_src}/../mgmt-salt/Makefile.builder
+ifneq (,$(findstring mgmt-salt-,$(COMPONENT)))
+include $(ORIG_SRC)/../mgmt-salt/Makefile.builder
+endif
 include {makefile}
 
 print-%  : ; @echo $($*)
