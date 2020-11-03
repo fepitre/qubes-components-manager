@@ -75,11 +75,11 @@ class QubesComponent:
         deb = None
         if version:
             if release:
-                deb = "{name}_{version}-{release}+deb{debian_ver}u{update}.{arch}.deb".format(
+                deb = "{name}_{version}-{release}+deb{debian_ver}u{update}_{arch}.deb".format(
                     name=name, version=version, release=release,
                     debian_ver=debian_ver, arch=arch, update=update)
             else:
-                deb = "{name}_{version}+deb{debian_ver}u{update}.{arch}.deb".format(
+                deb = "{name}_{version}+deb{debian_ver}u{update}_{arch}.deb".format(
                     name=name, version=version, debian_ver=debian_ver,
                     arch=arch, update=update)
         return deb
