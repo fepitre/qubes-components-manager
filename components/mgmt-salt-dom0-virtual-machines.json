@@ -5,7 +5,9 @@
             "4.0": {
                 "branch": "release4.0",
                 "dom0": {
-                    "fc25": []
+                    "fc25": [
+                        "qubes-mgmt-salt-dom0-virtual-machines"
+                    ]
                 },
                 "vms": {
                     "fc30": [],
@@ -24,7 +26,9 @@
             "4.1": {
                 "branch": "master",
                 "dom0": {
-                    "fc32": []
+                    "fc32": [
+                        "qubes-mgmt-salt-dom0-virtual-machines"
+                    ]
                 },
                 "vms": {
                     "fc32": [],

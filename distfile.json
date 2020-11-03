@@ -39,6 +39,7 @@
     },
     "components": {
         "vmm-xen": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "xen-4.8",
@@ -254,6 +255,7 @@
             }
         },
         "core-libvirt": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -356,6 +358,7 @@
             }
         },
         "core-vchan-xen": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -467,6 +470,7 @@
             }
         },
         "core-qubesdb": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -635,6 +639,7 @@
             }
         },
         "core-qrexec": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -731,6 +736,7 @@
             }
         },
         "linux-utils": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -1292,6 +1298,7 @@
             }
         },
         "python-panflute": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "master",
@@ -1366,6 +1373,7 @@
             }
         },
         "core-admin": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -1413,6 +1421,7 @@
             }
         },
         "core-admin-client": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -1511,6 +1520,7 @@
             }
         },
         "core-admin-addon-whonix": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -1556,6 +1566,7 @@
             }
         },
         "core-admin-linux": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -1609,6 +1620,7 @@
             }
         },
         "core-agent-linux": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -1820,6 +1832,7 @@
             }
         },
         "intel-microcode": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "master",
@@ -1865,6 +1878,7 @@
             }
         },
         "linux-firmware": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -1956,6 +1970,7 @@
             }
         },
         "linux-kernel": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "stable-4.19",
@@ -2005,6 +2020,7 @@
             }
         },
         "artwork": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -2078,6 +2094,7 @@
             }
         },
         "grub2": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -2137,6 +2154,7 @@
             }
         },
         "grub2-theme": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -2253,6 +2271,7 @@
             }
         },
         "gui-daemon": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -2598,6 +2617,7 @@
             }
         },
         "vmm-xen-stubdom-linux": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -2643,6 +2663,7 @@
             }
         },
         "app-linux-split-gpg": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "master",
@@ -2817,6 +2838,7 @@
             }
         },
         "app-linux-pdf-converter": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "master",
@@ -2882,6 +2904,7 @@
             }
         },
         "app-linux-img-converter": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "master",
@@ -2955,6 +2978,7 @@
             }
         },
         "app-linux-input-proxy": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "master",
@@ -3077,6 +3101,7 @@
             }
         },
         "app-linux-usb-proxy": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "master",
@@ -3406,7 +3431,9 @@
                 "4.0": {
                     "branch": "master",
                     "dom0": {
-                        "fc25": []
+                        "fc25": [
+                            "qubes-mgmt-salt-dom0-qubes-infrastructure"
+                        ]
                     },
                     "vms": {
                         "fc30": [],
@@ -3425,7 +3452,9 @@
                 "4.1": {
                     "branch": "master",
                     "dom0": {
-                        "fc32": []
+                        "fc32": [
+                            "qubes-mgmt-salt-dom0-qubes-infrastructure"
+                        ]
                     },
                     "vms": {
                         "fc32": [],
@@ -3443,6 +3472,7 @@
             }
         },
         "meta-packages": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -3561,6 +3591,7 @@
             }
         },
         "manager": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -3618,6 +3649,7 @@
             }
         },
         "desktop-linux-common": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -3780,6 +3812,7 @@
             }
         },
         "desktop-linux-xfce4": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -3844,6 +3877,7 @@
             }
         },
         "desktop-linux-xfce4-xfwm4": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -4111,6 +4145,7 @@
             }
         },
         "desktop-linux-manager": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -4120,11 +4155,21 @@
                         ]
                     },
                     "vms": {
-                        "fc30": [],
-                        "fc31": [],
-                        "fc32": [],
-                        "centos7": [],
-                        "centos8": [],
+                        "fc30": [
+                            "qubes-desktop-linux-manager"
+                        ],
+                        "fc31": [
+                            "qubes-desktop-linux-manager"
+                        ],
+                        "fc32": [
+                            "qubes-desktop-linux-manager"
+                        ],
+                        "centos7": [
+                            "qubes-desktop-linux-manager"
+                        ],
+                        "centos8": [
+                            "qubes-desktop-linux-manager"
+                        ],
                         "stretch": [],
                         "buster": [],
                         "bullseye": [],
@@ -4141,10 +4186,18 @@
                         ]
                     },
                     "vms": {
-                        "fc32": [],
-                        "fc33": [],
-                        "centos7": [],
-                        "centos8": [],
+                        "fc32": [
+                            "qubes-desktop-linux-manager"
+                        ],
+                        "fc33": [
+                            "qubes-desktop-linux-manager"
+                        ],
+                        "centos7": [
+                            "qubes-desktop-linux-manager"
+                        ],
+                        "centos8": [
+                            "qubes-desktop-linux-manager"
+                        ],
                         "buster": [],
                         "bullseye": [],
                         "whonix-gateway-15": [],
@@ -4211,6 +4264,7 @@
             }
         },
         "linux-pvgrub2": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "master",
@@ -4474,7 +4528,7 @@
             }
         },
         "installer-qubes-os": {
-            "iso-installer": 1,
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
@@ -4586,7 +4640,7 @@
             }
         },
         "pykickstart": {
-            "iso-installer": 1,
+            "iso-component": 1,
             "releases": {
                 "4.1": {
                     "branch": "master",
@@ -4612,7 +4666,7 @@
             }
         },
         "blivet": {
-            "iso-installer": 1,
+            "iso-component": 1,
             "releases": {
                 "4.1": {
                     "branch": "master",
@@ -4639,7 +4693,7 @@
             }
         },
         "lorax": {
-            "iso-installer": 1,
+            "iso-component": 1,
             "releases": {
                 "4.1": {
                     "branch": "master",
@@ -4670,7 +4724,7 @@
             }
         },
         "lorax-templates": {
-            "iso-installer": 1,
+            "iso-component": 1,
             "releases": {
                 "4.1": {
                     "branch": "master",
@@ -4695,7 +4749,7 @@
             }
         },
         "anaconda": {
-            "iso-installer": 1,
+            "iso-component": 1,
             "releases": {
                 "4.1": {
                     "branch": "master",
@@ -4730,7 +4784,7 @@
             }
         },
         "anaconda-addon": {
-            "iso-installer": 1,
+            "iso-component": 1,
             "releases": {
                 "4.1": {
                     "branch": "master",
@@ -5478,14 +5532,55 @@
                 "4.0": {
                     "branch": "release4.0",
                     "dom0": {
-                        "fc25": []
+                        "fc25": [
+                            "qubes-mgmt-salt",
+                            "qubes-mgmt-salt-config",
+                            "qubes-mgmt-salt-shared-formulas",
+                            "qubes-mgmt-salt-dom0",
+                            "qubes-mgmt-salt-dom0-formulas"
+                        ]
                     },
                     "vms": {
-                        "fc30": [],
-                        "fc31": [],
-                        "fc32": [],
-                        "centos7": [],
-                        "centos8": [],
+                        "fc30": [
+                            "qubes-mgmt-salt",
+                            "qubes-mgmt-salt-config",
+                            "qubes-mgmt-salt-shared-formulas",
+                            "qubes-mgmt-salt-vm",
+                            "qubes-mgmt-salt-vm-formulas",
+                            "qubes-mgmt-salt-vm-connector"
+                        ],
+                        "fc31": [
+                            "qubes-mgmt-salt",
+                            "qubes-mgmt-salt-config",
+                            "qubes-mgmt-salt-shared-formulas",
+                            "qubes-mgmt-salt-vm",
+                            "qubes-mgmt-salt-vm-formulas",
+                            "qubes-mgmt-salt-vm-connector"
+                        ],
+                        "fc32": [
+                            "qubes-mgmt-salt",
+                            "qubes-mgmt-salt-config",
+                            "qubes-mgmt-salt-shared-formulas",
+                            "qubes-mgmt-salt-vm",
+                            "qubes-mgmt-salt-vm-formulas",
+                            "qubes-mgmt-salt-vm-connector"
+                        ],
+                        "centos7": [
+                            "qubes-mgmt-salt",
+                            "qubes-mgmt-salt-config",
+                            "qubes-mgmt-salt-shared-formulas",
+                            "qubes-mgmt-salt-vm",
+                            "qubes-mgmt-salt-vm-formulas",
+                            "qubes-mgmt-salt-vm-connector"
+                        ],
+                        "centos8": [
+                            "qubes-mgmt-salt",
+                            "qubes-mgmt-salt-config",
+                            "qubes-mgmt-salt-shared-formulas",
+                            "qubes-mgmt-salt-vm",
+                            "qubes-mgmt-salt-vm-formulas",
+                            "qubes-mgmt-salt-vm-connector"
+                        ],
                         "stretch": [
                             "qubes-mgmt-salt",
                             "qubes-mgmt-salt-config",
@@ -5524,13 +5619,52 @@
                 "4.1": {
                     "branch": "master",
                     "dom0": {
-                        "fc32": []
+                        "fc32": [
+                            "qubes-mgmt-salt",
+                            "qubes-mgmt-salt-config",
+                            "qubes-mgmt-salt-shared-formulas",
+                            "qubes-mgmt-salt-admin-tools",
+                            "qubes-mgmt-salt-dom0",
+                            "qubes-mgmt-salt-dom0-formulas"
+                        ]
                     },
                     "vms": {
-                        "fc32": [],
-                        "fc33": [],
-                        "centos7": [],
-                        "centos8": [],
+                        "fc32": [
+                            "qubes-mgmt-salt",
+                            "qubes-mgmt-salt-config",
+                            "qubes-mgmt-salt-shared-formulas",
+                            "qubes-mgmt-salt-admin-tools",
+                            "qubes-mgmt-salt-vm",
+                            "qubes-mgmt-salt-vm-formulas",
+                            "qubes-mgmt-salt-vm-connector"
+                        ],
+                        "fc33": [
+                            "qubes-mgmt-salt",
+                            "qubes-mgmt-salt-config",
+                            "qubes-mgmt-salt-shared-formulas",
+                            "qubes-mgmt-salt-admin-tools",
+                            "qubes-mgmt-salt-vm",
+                            "qubes-mgmt-salt-vm-formulas",
+                            "qubes-mgmt-salt-vm-connector"
+                        ],
+                        "centos7": [
+                            "qubes-mgmt-salt",
+                            "qubes-mgmt-salt-config",
+                            "qubes-mgmt-salt-shared-formulas",
+                            "qubes-mgmt-salt-admin-tools",
+                            "qubes-mgmt-salt-vm",
+                            "qubes-mgmt-salt-vm-formulas",
+                            "qubes-mgmt-salt-vm-connector"
+                        ],
+                        "centos8": [
+                            "qubes-mgmt-salt",
+                            "qubes-mgmt-salt-config",
+                            "qubes-mgmt-salt-shared-formulas",
+                            "qubes-mgmt-salt-admin-tools",
+                            "qubes-mgmt-salt-vm",
+                            "qubes-mgmt-salt-vm-formulas",
+                            "qubes-mgmt-salt-vm-connector"
+                        ],
                         "buster": [
                             "qubes-mgmt-salt",
                             "qubes-mgmt-salt-config",
@@ -5560,18 +5694,31 @@
             }
         },
         "mgmt-salt-base": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
                     "dom0": {
-                        "fc25": []
+                        "fc25": [
+                            "qubes-mgmt-salt-base"
+                        ]
                     },
                     "vms": {
-                        "fc30": [],
-                        "fc31": [],
-                        "fc32": [],
-                        "centos7": [],
-                        "centos8": [],
+                        "fc30": [
+                            "qubes-mgmt-salt-base"
+                        ],
+                        "fc31": [
+                            "qubes-mgmt-salt-base"
+                        ],
+                        "fc32": [
+                            "qubes-mgmt-salt-base"
+                        ],
+                        "centos7": [
+                            "qubes-mgmt-salt-base"
+                        ],
+                        "centos8": [
+                            "qubes-mgmt-salt-base"
+                        ],
                         "stretch": [
                             "qubes-mgmt-salt-base"
                         ],
@@ -5589,13 +5736,23 @@
                 "4.1": {
                     "branch": "master",
                     "dom0": {
-                        "fc32": []
+                        "fc32": [
+                            "qubes-mgmt-salt-base"
+                        ]
                     },
                     "vms": {
-                        "fc32": [],
-                        "fc33": [],
-                        "centos7": [],
-                        "centos8": [],
+                        "fc32": [
+                            "qubes-mgmt-salt-base"
+                        ],
+                        "fc33": [
+                            "qubes-mgmt-salt-base"
+                        ],
+                        "centos7": [
+                            "qubes-mgmt-salt-base"
+                        ],
+                        "centos8": [
+                            "qubes-mgmt-salt-base"
+                        ],
                         "buster": [
                             "qubes-mgmt-salt-base"
                         ],
@@ -5611,18 +5768,31 @@
             }
         },
         "mgmt-salt-base-topd": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
                     "dom0": {
-                        "fc25": []
+                        "fc25": [
+                            "qubes-mgmt-salt-base-topd"
+                        ]
                     },
                     "vms": {
-                        "fc30": [],
-                        "fc31": [],
-                        "fc32": [],
-                        "centos7": [],
-                        "centos8": [],
+                        "fc30": [
+                            "qubes-mgmt-salt-base-topd"
+                        ],
+                        "fc31": [
+                            "qubes-mgmt-salt-base-topd"
+                        ],
+                        "fc32": [
+                            "qubes-mgmt-salt-base-topd"
+                        ],
+                        "centos7": [
+                            "qubes-mgmt-salt-base-topd"
+                        ],
+                        "centos8": [
+                            "qubes-mgmt-salt-base-topd"
+                        ],
                         "stretch": [
                             "qubes-mgmt-salt-base-topd"
                         ],
@@ -5640,13 +5810,23 @@
                 "4.1": {
                     "branch": "master",
                     "dom0": {
-                        "fc32": []
+                        "fc32": [
+                            "qubes-mgmt-salt-base-topd"
+                        ]
                     },
                     "vms": {
-                        "fc32": [],
-                        "fc33": [],
-                        "centos7": [],
-                        "centos8": [],
+                        "fc32": [
+                            "qubes-mgmt-salt-base-topd"
+                        ],
+                        "fc33": [
+                            "qubes-mgmt-salt-base-topd"
+                        ],
+                        "centos7": [
+                            "qubes-mgmt-salt-base-topd"
+                        ],
+                        "centos8": [
+                            "qubes-mgmt-salt-base-topd"
+                        ],
                         "buster": [
                             "qubes-mgmt-salt-base-topd"
                         ],
@@ -5662,18 +5842,31 @@
             }
         },
         "mgmt-salt-base-config": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
                     "dom0": {
-                        "fc25": []
+                        "fc25": [
+                            "qubes-mgmt-salt-base-config"
+                        ]
                     },
                     "vms": {
-                        "fc30": [],
-                        "fc31": [],
-                        "fc32": [],
-                        "centos7": [],
-                        "centos8": [],
+                        "fc30": [
+                            "qubes-mgmt-salt-base-config"
+                        ],
+                        "fc31": [
+                            "qubes-mgmt-salt-base-config"
+                        ],
+                        "fc32": [
+                            "qubes-mgmt-salt-base-config"
+                        ],
+                        "centos7": [
+                            "qubes-mgmt-salt-base-config"
+                        ],
+                        "centos8": [
+                            "qubes-mgmt-salt-base-config"
+                        ],
                         "stretch": [
                             "qubes-mgmt-salt-base-config"
                         ],
@@ -5691,13 +5884,23 @@
                 "4.1": {
                     "branch": "master",
                     "dom0": {
-                        "fc32": []
+                        "fc32": [
+                            "qubes-mgmt-salt-base-config"
+                        ]
                     },
                     "vms": {
-                        "fc32": [],
-                        "fc33": [],
-                        "centos7": [],
-                        "centos8": [],
+                        "fc32": [
+                            "qubes-mgmt-salt-base-config"
+                        ],
+                        "fc33": [
+                            "qubes-mgmt-salt-base-config"
+                        ],
+                        "centos7": [
+                            "qubes-mgmt-salt-base-config"
+                        ],
+                        "centos8": [
+                            "qubes-mgmt-salt-base-config"
+                        ],
                         "buster": [
                             "qubes-mgmt-salt-base-config"
                         ],
@@ -5713,11 +5916,14 @@
             }
         },
         "mgmt-salt-dom0-qvm": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
                     "dom0": {
-                        "fc25": []
+                        "fc25": [
+                            "qubes-mgmt-salt-dom0-qvm"
+                        ]
                     },
                     "vms": {
                         "fc30": [],
@@ -5736,7 +5942,9 @@
                 "4.1": {
                     "branch": "master",
                     "dom0": {
-                        "fc32": []
+                        "fc32": [
+                            "qubes-mgmt-salt-dom0-qvm"
+                        ]
                     },
                     "vms": {
                         "fc32": [],
@@ -5754,11 +5962,14 @@
             }
         },
         "mgmt-salt-dom0-virtual-machines": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
                     "dom0": {
-                        "fc25": []
+                        "fc25": [
+                            "qubes-mgmt-salt-dom0-virtual-machines"
+                        ]
                     },
                     "vms": {
                         "fc30": [],
@@ -5777,7 +5988,9 @@
                 "4.1": {
                     "branch": "master",
                     "dom0": {
-                        "fc32": []
+                        "fc32": [
+                            "qubes-mgmt-salt-dom0-virtual-machines"
+                        ]
                     },
                     "vms": {
                         "fc32": [],
@@ -5795,11 +6008,14 @@
             }
         },
         "mgmt-salt-dom0-update": {
+            "iso-component": 1,
             "releases": {
                 "4.0": {
                     "branch": "release4.0",
                     "dom0": {
-                        "fc25": []
+                        "fc25": [
+                            "qubes-mgmt-salt-dom0-update"
+                        ]
                     },
                     "vms": {
                         "fc30": [],
@@ -5818,7 +6034,9 @@
                 "4.1": {
                     "branch": "master",
                     "dom0": {
-                        "fc32": []
+                        "fc32": [
+                            "qubes-mgmt-salt-dom0-update"
+                        ]
                     },
                     "vms": {
                         "fc32": [],

@@ -5,14 +5,55 @@
             "4.0": {
                 "branch": "release4.0",
                 "dom0": {
-                    "fc25": []
+                    "fc25": [
+                        "qubes-mgmt-salt",
+                        "qubes-mgmt-salt-config",
+                        "qubes-mgmt-salt-shared-formulas",
+                        "qubes-mgmt-salt-dom0",
+                        "qubes-mgmt-salt-dom0-formulas"
+                    ]
                 },
                 "vms": {
-                    "fc30": [],
-                    "fc31": [],
-                    "fc32": [],
-                    "centos7": [],
-                    "centos8": [],
+                    "fc30": [
+                        "qubes-mgmt-salt",
+                        "qubes-mgmt-salt-config",
+                        "qubes-mgmt-salt-shared-formulas",
+                        "qubes-mgmt-salt-vm",
+                        "qubes-mgmt-salt-vm-formulas",
+                        "qubes-mgmt-salt-vm-connector"
+                    ],
+                    "fc31": [
+                        "qubes-mgmt-salt",
+                        "qubes-mgmt-salt-config",
+                        "qubes-mgmt-salt-shared-formulas",
+                        "qubes-mgmt-salt-vm",
+                        "qubes-mgmt-salt-vm-formulas",
+                        "qubes-mgmt-salt-vm-connector"
+                    ],
+                    "fc32": [
+                        "qubes-mgmt-salt",
+                        "qubes-mgmt-salt-config",
+                        "qubes-mgmt-salt-shared-formulas",
+                        "qubes-mgmt-salt-vm",
+                        "qubes-mgmt-salt-vm-formulas",
+                        "qubes-mgmt-salt-vm-connector"
+                    ],
+                    "centos7": [
+                        "qubes-mgmt-salt",
+                        "qubes-mgmt-salt-config",
+                        "qubes-mgmt-salt-shared-formulas",
+                        "qubes-mgmt-salt-vm",
+                        "qubes-mgmt-salt-vm-formulas",
+                        "qubes-mgmt-salt-vm-connector"
+                    ],
+                    "centos8": [
+                        "qubes-mgmt-salt",
+                        "qubes-mgmt-salt-config",
+                        "qubes-mgmt-salt-shared-formulas",
+                        "qubes-mgmt-salt-vm",
+                        "qubes-mgmt-salt-vm-formulas",
+                        "qubes-mgmt-salt-vm-connector"
+                    ],
                     "stretch": [
                         "qubes-mgmt-salt",
                         "qubes-mgmt-salt-config",
@@ -51,13 +92,52 @@
             "4.1": {
                 "branch": "master",
                 "dom0": {
-                    "fc32": []
+                    "fc32": [
+                        "qubes-mgmt-salt",
+                        "qubes-mgmt-salt-config",
+                        "qubes-mgmt-salt-shared-formulas",
+                        "qubes-mgmt-salt-admin-tools",
+                        "qubes-mgmt-salt-dom0",
+                        "qubes-mgmt-salt-dom0-formulas"
+                    ]
                 },
                 "vms": {
-                    "fc32": [],
-                    "fc33": [],
-                    "centos7": [],
-                    "centos8": [],
+                    "fc32": [
+                        "qubes-mgmt-salt",
+                        "qubes-mgmt-salt-config",
+                        "qubes-mgmt-salt-shared-formulas",
+                        "qubes-mgmt-salt-admin-tools",
+                        "qubes-mgmt-salt-vm",
+                        "qubes-mgmt-salt-vm-formulas",
+                        "qubes-mgmt-salt-vm-connector"
+                    ],
+                    "fc33": [
+                        "qubes-mgmt-salt",
+                        "qubes-mgmt-salt-config",
+                        "qubes-mgmt-salt-shared-formulas",
+                        "qubes-mgmt-salt-admin-tools",
+                        "qubes-mgmt-salt-vm",
+                        "qubes-mgmt-salt-vm-formulas",
+                        "qubes-mgmt-salt-vm-connector"
+                    ],
+                    "centos7": [
+                        "qubes-mgmt-salt",
+                        "qubes-mgmt-salt-config",
+                        "qubes-mgmt-salt-shared-formulas",
+                        "qubes-mgmt-salt-admin-tools",
+                        "qubes-mgmt-salt-vm",
+                        "qubes-mgmt-salt-vm-formulas",
+                        "qubes-mgmt-salt-vm-connector"
+                    ],
+                    "centos8": [
+                        "qubes-mgmt-salt",
+                        "qubes-mgmt-salt-config",
+                        "qubes-mgmt-salt-shared-formulas",
+                        "qubes-mgmt-salt-admin-tools",
+                        "qubes-mgmt-salt-vm",
+                        "qubes-mgmt-salt-vm-formulas",
+                        "qubes-mgmt-salt-vm-connector"
+                    ],
                     "buster": [
                         "qubes-mgmt-salt",
                         "qubes-mgmt-salt-config",
