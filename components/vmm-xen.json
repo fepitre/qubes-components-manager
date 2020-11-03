@@ -1,5 +1,6 @@
 {
     "vmm-xen": {
+        "iso-component": 1,
         "releases": {
             "4.0": {
                 "branch": "xen-4.8",

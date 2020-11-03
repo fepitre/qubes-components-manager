@@ -1,5 +1,6 @@
 {
     "core-admin-linux": {
+        "iso-component": 1,
         "releases": {
             "4.0": {
                 "branch": "release4.0",

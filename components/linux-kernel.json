@@ -1,5 +1,6 @@
 {
     "linux-kernel": {
+        "iso-component": 1,
         "releases": {
             "4.0": {
                 "branch": "stable-4.19",

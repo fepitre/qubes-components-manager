@@ -151,7 +151,7 @@ class ComponentManagerCli:
         for component in self.components:
             if component.is_plugin_type():
                 self.builder_plugins.append(component)
-            if component.is_installer_type():
+            if component.is_iso_component():
                 self.iso_components.append(component)
             if component.is_windows_type():
                 self.windows_components.append(component)

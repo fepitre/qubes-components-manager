@@ -1,6 +1,6 @@
 {
     "installer-qubes-os": {
-        "iso-installer": 1,
+        "iso-component": 1,
         "releases": {
             "4.0": {
                 "branch": "release4.0",

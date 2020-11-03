@@ -1,5 +1,6 @@
 {
     "intel-microcode": {
+        "iso-component": 1,
         "releases": {
             "4.0": {
                 "branch": "master",

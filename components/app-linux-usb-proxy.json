@@ -1,5 +1,6 @@
 {
     "app-linux-usb-proxy": {
+        "iso-component": 1,
         "releases": {
             "4.0": {
                 "branch": "master",

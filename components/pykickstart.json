@@ -1,6 +1,6 @@
 {
     "pykickstart": {
-        "iso-installer": 1,
+        "iso-component": 1,
         "releases": {
             "4.1": {
                 "branch": "master",

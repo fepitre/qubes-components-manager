@@ -50,8 +50,8 @@ class QubesComponent:
     def is_plugin_type(self):
         return self.opts.get('plugin', 0) == 1
 
-    def is_installer_type(self):
-        return self.opts.get('iso-installer', 0) == 1
+    def is_iso_component(self):
+        return self.opts.get('iso-component', 0) == 1
 
     def is_windows_type(self):
         return 'windows' in self.name

@@ -1,5 +1,6 @@
 {
     "mgmt-salt-dom0-update": {
+        "iso-component": 1,
         "releases": {
             "4.0": {
                 "branch": "release4.0",
