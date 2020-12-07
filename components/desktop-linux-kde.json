@@ -23,7 +23,7 @@
                         "plasma-breeze-qubes"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [],
                     "fc31": [],
                     "fc32": [],
@@ -45,7 +45,7 @@
                         "plasma-breeze-qubes"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "kde-settings-qubes",
                         "plasma-breeze-qubes"

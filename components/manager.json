@@ -9,7 +9,7 @@
                         "qubes-manager"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [],
                     "fc31": [],
                     "fc32": [],
@@ -30,7 +30,7 @@
                         "qubes-manager"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-manager"
                     ],

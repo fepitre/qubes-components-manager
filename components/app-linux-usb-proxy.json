@@ -9,7 +9,7 @@
                         "qubes-usb-proxy-dom0"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "qubes-usb-proxy"
                     ],
@@ -46,7 +46,7 @@
                         "qubes-usb-proxy-dom0"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-usb-proxy"
                     ],

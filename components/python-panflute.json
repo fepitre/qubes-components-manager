@@ -9,7 +9,7 @@
                         "python3-panflute"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "python-panflute",
                         "python3-panflute"
@@ -46,7 +46,7 @@
                         "python3-panflute"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "python-panflute",
                         "python3-panflute"

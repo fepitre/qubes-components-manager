@@ -11,7 +11,7 @@
                         "dummy-backlight-vm"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "dummy-backlight",
                         "dummy-backlight-module",

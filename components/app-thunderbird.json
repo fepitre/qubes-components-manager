@@ -6,7 +6,7 @@
                 "dom0": {
                     "fc25": []
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "thunderbird-qubes"
                     ],
@@ -41,7 +41,7 @@
                 "dom0": {
                     "fc32": []
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "thunderbird-qubes"
                     ],

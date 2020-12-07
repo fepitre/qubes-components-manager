@@ -6,7 +6,7 @@
                 "dom0": {
                     "fc25": []
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "qubes-gui-agent",
                         "pulseaudio-qubes",
@@ -76,7 +76,7 @@
                         "qubes-gui-agent-debugsource"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-gui-agent",
                         "pulseaudio-qubes",

@@ -9,7 +9,7 @@
                         "xen-hvm-stubdom-linux"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [],
                     "fc31": [],
                     "fc32": [],
@@ -30,7 +30,7 @@
                         "xen-hvm-stubdom-linux"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [],
                     "fc33": [],
                     "centos7": [],

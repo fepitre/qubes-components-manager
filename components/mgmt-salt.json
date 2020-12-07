@@ -13,7 +13,7 @@
                         "qubes-mgmt-salt-dom0-formulas"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "qubes-mgmt-salt",
                         "qubes-mgmt-salt-config",
@@ -101,7 +101,7 @@
                         "qubes-mgmt-salt-dom0-formulas"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-mgmt-salt",
                         "qubes-mgmt-salt-config",

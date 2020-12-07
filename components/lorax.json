@@ -15,7 +15,7 @@
                         "composer-cli"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [],
                     "fc33": [],
                     "centos7": [],

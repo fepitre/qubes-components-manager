@@ -10,7 +10,7 @@
                         "python3-gbulb"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "python-gbulb",
                         "python3-gbulb"
@@ -53,7 +53,7 @@
                         "python3-gbulb"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "python-gbulb",
                         "python3-gbulb"

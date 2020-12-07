@@ -13,7 +13,7 @@
                         "qubes-core-dom0-vaio-fixes"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [],
                     "fc31": [],
                     "fc32": [],
@@ -38,7 +38,7 @@
                         "qubes-core-dom0-linux-debugsource"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [],
                     "fc33": [],
                     "centos7": [],

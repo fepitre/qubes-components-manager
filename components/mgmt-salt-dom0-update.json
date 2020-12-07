@@ -9,7 +9,7 @@
                         "qubes-mgmt-salt-dom0-update"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [],
                     "fc31": [],
                     "fc32": [],
@@ -30,7 +30,7 @@
                         "qubes-mgmt-salt-dom0-update"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [],
                     "fc33": [],
                     "centos7": [],

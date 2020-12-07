@@ -8,7 +8,7 @@
                         "qubes-u2f-dom0"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "qubes-u2f"
                     ],
@@ -43,7 +43,7 @@
                         "qubes-u2f-dom0"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-u2f"
                     ],

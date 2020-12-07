@@ -9,7 +9,7 @@
                         "qubes-gpg-split-dom0"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "qubes-gpg-split",
                         "qubes-gpg-split-tests",
@@ -64,7 +64,7 @@
                         "qubes-gpg-split-dom0"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-gpg-split",
                         "qubes-gpg-split-tests",

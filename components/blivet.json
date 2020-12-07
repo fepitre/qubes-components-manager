@@ -11,7 +11,7 @@
                         "python3-blivet"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [],
                     "fc33": [],
                     "centos7": [],

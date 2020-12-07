@@ -16,7 +16,7 @@
                         "xfwm4-debugsource"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [],
                     "fc31": [],
                     "fc32": [],
@@ -37,7 +37,7 @@
                         "xfce4-settings-qubes"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "xfce4-settings-qubes"
                     ],

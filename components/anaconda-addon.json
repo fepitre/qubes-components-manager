@@ -9,7 +9,7 @@
                         "qubes-anaconda-addon"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [],
                     "fc33": [],
                     "centos7": [],

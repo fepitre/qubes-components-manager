@@ -9,7 +9,7 @@
                         "qubes-mgmt-salt-base"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "qubes-mgmt-salt-base"
                     ],
@@ -40,7 +40,7 @@
                         "qubes-mgmt-salt-base"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-mgmt-salt-base"
                     ],

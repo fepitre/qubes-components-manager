@@ -6,7 +6,7 @@
                 "dom0": {
                     "fc25": []
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "qubes-core-agent",
                         "python2-dnf-plugins-qubes-hooks",
@@ -20,6 +20,7 @@
                         "qubes-core-agent-thunar",
                         "qubes-core-agent-debuginfo",
                         "qubes-core-agent-debugsource",
+                        "qubes-core-agent-sysvinit",
                         "qubes-core-agent-systemd"
                     ],
                     "fc31": [
@@ -35,6 +36,7 @@
                         "qubes-core-agent-thunar",
                         "qubes-core-agent-debuginfo",
                         "qubes-core-agent-debugsource",
+                        "qubes-core-agent-sysvinit",
                         "qubes-core-agent-systemd"
                     ],
                     "fc32": [
@@ -50,6 +52,7 @@
                         "qubes-core-agent-thunar",
                         "qubes-core-agent-debuginfo",
                         "qubes-core-agent-debugsource",
+                        "qubes-core-agent-sysvinit",
                         "qubes-core-agent-systemd"
                     ],
                     "centos7": [
@@ -65,6 +68,7 @@
                         "qubes-core-agent-thunar",
                         "qubes-core-agent-debuginfo",
                         "qubes-core-agent-debugsource",
+                        "qubes-core-agent-sysvinit",
                         "qubes-core-agent-systemd"
                     ],
                     "centos8": [
@@ -80,6 +84,7 @@
                         "qubes-core-agent-thunar",
                         "qubes-core-agent-debuginfo",
                         "qubes-core-agent-debugsource",
+                        "qubes-core-agent-sysvinit",
                         "qubes-core-agent-systemd"
                     ],
                     "stretch": [
@@ -122,7 +127,7 @@
                 "dom0": {
                     "fc32": []
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-core-agent",
                         "python2-dnf-plugins-qubes-hooks",

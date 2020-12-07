@@ -10,7 +10,7 @@
                         "qubes-repo-contrib"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "qubes-vm-meta-packages",
                         "qubes-vm-dependencies",
@@ -69,7 +69,7 @@
                         "qubes-repo-contrib"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-vm-meta-packages",
                         "qubes-vm-dependencies",

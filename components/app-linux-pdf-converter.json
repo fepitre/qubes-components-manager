@@ -9,7 +9,7 @@
                         "qubes-pdf-converter-dom0"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "qubes-pdf-converter"
                     ],
@@ -42,7 +42,7 @@
                         "qubes-pdf-converter-dom0"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-pdf-converter"
                     ],

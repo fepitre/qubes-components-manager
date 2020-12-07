@@ -11,7 +11,7 @@
                         "awesome-debugsource"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [],
                     "fc31": [],
                     "fc32": [],
@@ -35,7 +35,7 @@
                         "awesome-debugsource"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "awesome",
                         "awesome-doc",

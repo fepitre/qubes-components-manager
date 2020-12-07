@@ -12,7 +12,7 @@
                         "qubes-libvchan-xen-devel"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "qubes-libvchan-xen",
                         "qubes-libvchan-xen-debuginfo",
@@ -70,7 +70,7 @@
                         "qubes-libvchan-xen-devel"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-libvchan-xen",
                         "qubes-libvchan-xen-debuginfo",

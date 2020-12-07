@@ -13,7 +13,7 @@
                         "grub2-xen-debugsource"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [],
                     "fc31": [],
                     "fc32": [],
@@ -38,7 +38,7 @@
                         "grub2-xen-debugsource"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [],
                     "fc33": [],
                     "centos7": [],

@@ -7,7 +7,7 @@
                 "dom0": {
                     "fc25": []
                 },
-                "vms": {
+                "vm": {
                     "fc30": [],
                     "fc31": [],
                     "fc32": [],
@@ -16,8 +16,6 @@
                     "stretch": [],
                     "buster": [],
                     "bullseye": [],
-                    "whonix-gateway-15": [],
-                    "whonix-workstation-15": [],
                     "archlinux": []
                 }
             },
@@ -29,7 +27,7 @@
                         "python3-qasync"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "python-qasync",
                         "python3-qasync"

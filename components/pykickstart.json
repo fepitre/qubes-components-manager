@@ -10,7 +10,7 @@
                         "python3-kickstart"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [],
                     "fc33": [],
                     "centos7": [],

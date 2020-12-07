@@ -19,7 +19,7 @@
                         "anaconda-debugsource"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [],
                     "fc33": [],
                     "centos7": [],

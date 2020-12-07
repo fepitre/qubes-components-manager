@@ -10,7 +10,7 @@
                         "qubes-artwork-efi"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [],
                     "fc31": [],
                     "fc32": [],
@@ -34,7 +34,7 @@
                         "qubes-artwork-anaconda"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-artwork",
                         "qubes-artwork-plymouth",

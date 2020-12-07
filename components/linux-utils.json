@@ -16,7 +16,7 @@
                         "qubes-kernel-vm-support"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "qubes-utils",
                         "python2-qubesimgconverter",
@@ -109,7 +109,7 @@
                         "qubes-kernel-vm-support"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-utils",
                         "python3-qubesimgconverter",

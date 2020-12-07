@@ -13,7 +13,7 @@
                         "dummy-psu-debugsource"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "dummy-psu",
                         "dummy-psu-module",

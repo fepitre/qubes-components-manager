@@ -13,7 +13,7 @@
                         "qubes-input-proxy-debugsource"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "qubes-input-proxy",
                         "qubes-input-proxy-sender",
@@ -77,7 +77,7 @@
                         "qubes-input-proxy-debugsource"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-input-proxy",
                         "qubes-input-proxy-sender",

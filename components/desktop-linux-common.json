@@ -10,7 +10,7 @@
                         "qubes-menus"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "qubes-desktop-linux-common",
                         "qubes-menus"
@@ -56,7 +56,7 @@
                         "qubes-menus"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-desktop-linux-common",
                         "qubes-menus"

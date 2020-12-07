@@ -2,25 +2,6 @@
     "core-qrexec": {
         "iso-component": 1,
         "releases": {
-            "4.0": {
-                "branch": "release4.0",
-                "dom0": {
-                    "fc25": []
-                },
-                "vms": {
-                    "fc30": [],
-                    "fc31": [],
-                    "fc32": [],
-                    "centos7": [],
-                    "centos8": [],
-                    "stretch": [],
-                    "buster": [],
-                    "bullseye": [],
-                    "whonix-gateway-15": [],
-                    "whonix-workstation-15": [],
-                    "archlinux": []
-                }
-            },
             "4.1": {
                 "branch": "master",
                 "dom0": {
@@ -35,7 +16,7 @@
                         "qubes-core-qrexec-dom0-debugsource"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-core-qrexec",
                         "qubes-core-qrexec-libs",

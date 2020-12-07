@@ -30,6 +30,12 @@ class QubesDist:
         if DEBIAN.get(self.name, None):
             return True
 
+    def get_version(self):
+        if self.is_rpm():
+            return self.name.replace('fc', '').replace('centos', '')
+        elif self.is_deb():
+            return DEBIAN[self.name].split('-')[1]
+
     def get_labels(self):
         labels = []
         label = None

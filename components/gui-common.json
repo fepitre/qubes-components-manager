@@ -9,7 +9,7 @@
                         "qubes-gui-common-devel"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "qubes-gui-common-devel"
                     ],
@@ -46,7 +46,7 @@
                         "qubes-gui-common-devel"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-gui-common-devel"
                     ],

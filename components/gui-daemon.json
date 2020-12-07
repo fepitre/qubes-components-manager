@@ -11,7 +11,7 @@
                         "qubes-gui-dom0-debugsource"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [],
                     "fc31": [],
                     "fc32": [],
@@ -37,7 +37,7 @@
                         "qubes-gui-daemon-debugsource"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-gui-daemon",
                         "qubes-gui-dom0",

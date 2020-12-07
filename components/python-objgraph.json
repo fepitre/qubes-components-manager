@@ -10,7 +10,7 @@
                         "python-objgraph-doc"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "python-objgraph",
                         "python3-objgraph",
@@ -53,7 +53,7 @@
                         "python-objgraph-doc"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "python-objgraph",
                         "python3-objgraph",

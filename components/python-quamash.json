@@ -9,7 +9,7 @@
                         "python3-Quamash"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "python-Quamash",
                         "python3-Quamash"
@@ -46,7 +46,7 @@
                         "python3-Quamash"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "python-Quamash",
                         "python3-Quamash"

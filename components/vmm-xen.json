@@ -22,7 +22,7 @@
                         "xen-debugsource"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "xen",
                         "python2-xen",
@@ -147,7 +147,7 @@
                         "xen-debugsource"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [],
                     "fc33": [],
                     "centos7": [],

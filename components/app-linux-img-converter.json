@@ -9,7 +9,7 @@
                         "qubes-img-converter-dom0"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "qubes-img-converter"
                     ],
@@ -46,7 +46,7 @@
                         "qubes-img-converter-dom0"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-img-converter"
                     ],

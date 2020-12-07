@@ -9,7 +9,7 @@
                         "python3-u2flib-host"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "python-u2flib-host",
                         "python3-u2flib-host"

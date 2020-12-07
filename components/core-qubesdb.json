@@ -15,7 +15,7 @@
                         "qubes-db-dom0"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc30": [
                         "qubes-db",
                         "qubes-db-libs",
@@ -100,7 +100,7 @@
                         "qubes-db-dom0"
                     ]
                 },
-                "vms": {
+                "vm": {
                     "fc32": [
                         "qubes-db",
                         "qubes-db-libs",
