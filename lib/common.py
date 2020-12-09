@@ -14,6 +14,7 @@ ORIG_SRC ?= {orig_src}
 ifneq (,$(findstring mgmt-salt-,$(COMPONENT)))
 include $(ORIG_SRC)/../mgmt-salt/Makefile.builder
 endif
+GITHUB_STATE_DIR = $(HOME)/github-notify-state
 include {makefile}
 
 print-%  : ; @echo $($*)
@@ -33,10 +34,16 @@ def get_rpm_spec_files(component_path, dist, package_set):
     env = {
         "COMPONENT": os.path.basename(component_path)
     }
+    if dist.startswith('centos'):
+        distribution = 'centos'
+    else:
+        distribution = 'fedora'
     if package_set == 'dom0':
-        env.update({'PACKAGE_SET': 'dom0', 'DIST': dist})
+        env.update(
+            {'PACKAGE_SET': 'dom0', 'DISTRIBUTION': distribution, 'DIST': dist})
     elif package_set == 'vm':
-        env.update({'PACKAGE_SET': 'vm', 'DIST': dist})
+        env.update(
+            {'PACKAGE_SET': 'vm', 'DISTRIBUTION': distribution, 'DIST': dist})
 
     specs = get_makefile_value(makefile_path, 'RPM_SPEC_FILES', env)
     return specs.split()
