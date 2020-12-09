@@ -31,6 +31,8 @@
                     "centos8": [],
                     "buster": [],
                     "bullseye": [],
+                    "whonix-gateway-15": [],
+                    "whonix-workstation-15": [],
                     "archlinux": [],
                     "gentoo": []
                 }

@@ -22,14 +22,8 @@
                         "python-Quamash",
                         "python3-Quamash"
                     ],
-                    "centos7": [
-                        "python-Quamash",
-                        "python3-Quamash"
-                    ],
-                    "centos8": [
-                        "python-Quamash",
-                        "python3-Quamash"
-                    ],
+                    "centos7": [],
+                    "centos8": [],
                     "stretch": [],
                     "buster": [],
                     "bullseye": [],
@@ -55,14 +49,8 @@
                         "python-Quamash",
                         "python3-Quamash"
                     ],
-                    "centos7": [
-                        "python-Quamash",
-                        "python3-Quamash"
-                    ],
-                    "centos8": [
-                        "python-Quamash",
-                        "python3-Quamash"
-                    ],
+                    "centos7": [],
+                    "centos8": [],
                     "buster": [],
                     "bullseye": [],
                     "whonix-gateway-15": [],

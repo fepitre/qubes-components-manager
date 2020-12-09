@@ -18,14 +18,8 @@
                         "python-u2flib-host",
                         "python3-u2flib-host"
                     ],
-                    "centos7": [
-                        "python-u2flib-host",
-                        "python3-u2flib-host"
-                    ],
-                    "centos8": [
-                        "python-u2flib-host",
-                        "python3-u2flib-host"
-                    ],
+                    "centos7": [],
+                    "centos8": [],
                     "buster": [
                         "python3-u2flib-host"
                     ],

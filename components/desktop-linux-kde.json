@@ -54,14 +54,8 @@
                         "kde-settings-qubes",
                         "plasma-breeze-qubes"
                     ],
-                    "centos7": [
-                        "kde-settings-qubes",
-                        "plasma-breeze-qubes"
-                    ],
-                    "centos8": [
-                        "kde-settings-qubes",
-                        "plasma-breeze-qubes"
-                    ],
+                    "centos7": [],
+                    "centos8": [],
                     "buster": [],
                     "bullseye": [],
                     "whonix-gateway-15": [],
