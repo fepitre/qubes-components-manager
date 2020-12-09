@@ -6,7 +6,7 @@ import subprocess
 def get_makefile_value(makefile, var, env=None):
     # Very simple implementation of getting makefile variables values
     value = ''
-    if os.path.exists(os.path.dirname(makefile)):
+    if os.path.exists(makefile):
         curr_dir = os.path.dirname(makefile)
         with tempfile.NamedTemporaryFile(dir=curr_dir) as fd:
             content = """
