@@ -34,7 +34,7 @@ class RPMParser:
                 fd_spec.write(content.encode('utf-8'))
                 fd_spec.seek(0)
                 spec = fd_spec.name
-                cmd = ["/usr/bin/rpmspec", "-q", "--qf",
+                cmd = ["/usr/bin/rpmspec", "--undefine=dist", "-q", "--qf",
                        '\{"name": "%{name}", "version": "%{version}", "release": "%{release}", "arch": "%{arch}"\}\n', spec]
                 kwargs = {
                     "cwd": curr_dir,
