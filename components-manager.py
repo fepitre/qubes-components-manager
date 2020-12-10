@@ -10,6 +10,9 @@ from jinja2 import Template
 from lib.component import QubesComponent
 from lib.dist import QubesDist
 
+AVAILABLE_FORMAT_ITEMS = [
+    "component", "qubes_release", "package_set", "dist", "packages"]
+
 
 class QubesComponentsManagerException(Exception):
     pass
@@ -232,21 +235,54 @@ class ComponentsManagerCli:
             with open(component_file, 'w') as fd:
                 fd.write(json.dumps(component.to_dict(), indent=4))
 
-    def get_packages_list(self, component, qubes_release, with_nvr=False):
+    @staticmethod
+    def get_packages_list(component, qubes_release, with_nvr=False):
         if with_nvr:
             packages_list = component.get_nvr_packages_list(qubes_release)
         else:
             packages_list = component.get_packages_list(qubes_release)
         return packages_list
 
-    def get_components_packages_list(self, components, with_nvr=False):
+    def get_components_packages_list(self, components, req_dist=None, raw=False,
+                                     req_package_set=None, with_nvr=False,
+                                     req_format=None, skip_empty=False):
         pkgs = {}
+        pkgs_with_format = []
+
+        if raw and not req_format:
+            req_format = ["packages"]
+        requested_format = ':'.join('{%s}' % f for f in req_format)
+
         for component in self.get_components_from_name(components):
-            pkgs[component.name] = {"releases": {}}
+            pkgs[component.name] = {}
             for qubes_release in component.releases:
-                pkgs[component.name]["releases"][qubes_release] = \
-                    self.get_packages_list(component, qubes_release, with_nvr)
-        return pkgs
+                packages_list = self.get_packages_list(
+                    component, qubes_release, with_nvr)
+                for package_set in packages_list.keys():
+                    if req_package_set and package_set != req_package_set:
+                        continue
+                    for dist in packages_list[package_set].keys():
+                        if req_dist and dist not in req_dist:
+                            continue
+                        component_packages_list = \
+                            packages_list[package_set][dist]
+                        if skip_empty and not component_packages_list:
+                            continue
+                        pkgs_with_format.append(
+                            requested_format.format(
+                                component=component.name,
+                                qubes_release=qubes_release,
+                                package_set=package_set,
+                                dist=dist,
+                                packages=' '.join(component_packages_list)
+                            )
+                        )
+                pkgs[component.name][qubes_release] = packages_list
+        if raw:
+            output = pkgs_with_format
+        else:
+            output = pkgs
+        return output
 
 
 def get_args():
@@ -308,7 +344,30 @@ def get_args():
         action="store_true",
         help="Output with version and release build tag."
     )
-
+    get_parser.add_argument(
+        "--raw",
+        action="store_true",
+        help="Raw output. Format can be specified. See --format"
+    )
+    get_parser.add_argument(
+        "--format",
+        help="Provide format as colon separated fields. "
+             "Available fields: component, qubes_release, package_set, dist, packages."
+    )
+    get_parser.add_argument(
+        "--skip-empty",
+        action="store_true",
+        help="Skip output of empty packages list"
+    )
+    get_parser.add_argument(
+        "--dist",
+        nargs='+',
+        help="Filter distributions."
+    )
+    get_parser.add_argument(
+        "--package-set",
+        help="Filter package set."
+    )
     return parser.parse_args()
 
 
@@ -326,6 +385,16 @@ def main():
     if not os.path.exists(args.qubes_src):
         print("ERROR: Cannot find qubes-src folder")
         return 1
+    if args.package_set and args.package_set not in ("dom0", "vm"):
+        print("ERROR: Invalid package set provided")
+        return 1
+    requested_format = None
+    if args.format:
+        requested_format = args.format.split(':')
+        for fmt in args.format.split(':'):
+            if fmt not in AVAILABLE_FORMAT_ITEMS:
+                print("ERROR: Unsupported format '%s'" % fmt)
+                return 1
 
     cli = ComponentsManagerCli(
         releasefile=args.releasefile,
@@ -349,8 +418,18 @@ def main():
             if args.with_nvr:
                 cli.update_components(args.packages_list)
             pkgs_list = cli.get_components_packages_list(
-                args.packages_list, with_nvr=args.with_nvr)
-            print(json.dumps(pkgs_list, indent=4))
+                args.packages_list,
+                req_dist=args.dist,
+                req_package_set=args.package_set,
+                with_nvr=args.with_nvr,
+                raw=args.raw,
+                req_format=requested_format,
+                skip_empty=args.skip_empty
+            )
+            if not args.raw:
+                print(json.dumps(pkgs_list, indent=4))
+            else:
+                print('\n'.join(pkgs_list))
 
 
 if __name__ == "__main__":
