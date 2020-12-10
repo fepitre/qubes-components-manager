@@ -422,17 +422,6 @@ def main():
     if not os.path.exists(args.qubes_src):
         logger.error("-> Cannot find qubes-src folder")
         return 1
-    if args.package_set and args.package_set not in ("dom0", "vm"):
-        logger.error("-> Invalid package set provided")
-        return 1
-    requested_format = None
-    if args.format:
-        requested_format = args.format.split(':')
-        for fmt in args.format.split(':'):
-            if fmt not in AVAILABLE_FORMAT_ITEMS:
-                logger.error("-> Unsupported format '%s'" % fmt)
-                return 1
-
     if args.debug:
         logger.setLevel(logging.DEBUG)
     elif args.verbose:
@@ -458,6 +447,16 @@ def main():
         if args.distfile:
             cli.create_distfile(args.distfile)
     elif args.command == 'get':
+        if args.package_set and args.package_set not in ("dom0", "vm"):
+            logger.error("-> Invalid package set provided")
+            return 1
+        requested_format = None
+        if args.format:
+            requested_format = args.format.split(':')
+            for fmt in args.format.split(':'):
+                if fmt not in AVAILABLE_FORMAT_ITEMS:
+                    logger.error("-> Unsupported format '%s'" % fmt)
+                    return 1
         if args.packages_list:
             if args.with_nvr:
                 cli.update_components(args.packages_list)

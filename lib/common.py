@@ -3,6 +3,24 @@ import tempfile
 import subprocess
 
 
+def get_version(component_path):
+    try:
+        with open(os.path.join(component_path, 'version')) as fd:
+            version = fd.read().split('\n')[0]
+    except FileNotFoundError:
+        version = None
+    return version
+
+
+def get_release(component_path):
+    try:
+        with open(os.path.join(component_path, 'rel')) as fd:
+            release = fd.read().split('\n')[0]
+    except FileNotFoundError:
+        release = None
+    return release
+
+
 def get_makefile_value(makefile, var, env=None):
     # Very simple implementation of getting makefile variables values
     value = ''

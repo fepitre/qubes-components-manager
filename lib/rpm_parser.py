@@ -3,11 +3,17 @@ import subprocess
 import tempfile
 import json
 
+from lib.common import get_version, get_release
+
+class RPMParserException(Exception):
+    pass
+
 
 class RPMParser:
 
-    def __init__(self, spec):
-        self.spec = os.path.abspath(spec)
+    def __init__(self, orig_src, spec):
+        self.orig_src = orig_src
+        self.spec = os.path.join(orig_src, spec)
         self.packages = []
 
     def get_packages(self):
@@ -34,7 +40,7 @@ class RPMParser:
                 fd_spec.write(content.encode('utf-8'))
                 fd_spec.seek(0)
                 spec = fd_spec.name
-                cmd = ["/usr/bin/rpmspec", "--undefine=dist", "-q", "--qf",
+                cmd = ["/usr/bin/rpmspec", "-q", "--qf",
                        '\{"name": "%{name}", "version": "%{version}", "release": "%{release}", "arch": "%{arch}"\}\n', spec]
                 kwargs = {
                     "cwd": curr_dir,
@@ -54,6 +60,10 @@ class RPMParser:
         release = raw_info["release"]
         arch = raw_info.get("arch", None)
 
+        if not version:
+            raise RPMParserException('Cannot determine version')
+        if not release:
+            raise RPMParserException('Cannot determine release')
         if not filtered_arches:
             filtered_arches = ['noarch', 'x86_64']
 
@@ -66,14 +76,19 @@ class RPMParser:
             }
         return pkg
 
-    @staticmethod
-    def get_rendered_spec(content):
-        content = content.replace('@VERSION@', '1.0.0')
+    def get_rendered_spec(self, content):
+        version = get_version(self.orig_src)
+        release = get_release(self.orig_src)
+        if not version:
+            version = ''
+        if not release:
+            release = ''
+        content = content.replace('@VERSION@', version)
         for i in range(1, 8):
-            content = content.replace('@VERSION%d@' % i, '1.0.0')
-        content = content.replace('@REL@', '1')
+            content = content.replace('@VERSION%d@' % i, version)
+        content = content.replace('@REL@', release)
         for i in range(1, 8):
-            content = content.replace('@REL%d@' % i, '1')
+            content = content.replace('@REL%d@' % i, release)
         content = content.replace('@CHANGELOG@', '')
         content = content.replace('@BACKEND_VMM@', 'xen')
         return content

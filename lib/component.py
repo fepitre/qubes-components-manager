@@ -75,51 +75,22 @@ class QubesComponent:
     def is_windows_type(self):
         return 'windows' in self.name
 
-    def get_version(self):
-        try:
-            with open(os.path.join(self.orig_src, 'version')) as fd:
-                version = fd.read().split('\n')[0]
-        except FileNotFoundError:
-            version = None
-        return version
-
-    def get_release(self):
-        try:
-            with open(os.path.join(self.orig_src, 'rel')) as fd:
-                release = fd.read().split('\n')[0]
-        except FileNotFoundError:
-            release = None
-        return release
-
-    def get_nvr_rpm(self, name, dist, arch, qubes_release, version=None,
-                    release=None):
-        if self.version.get(qubes_release, None):
-            version = self.version[qubes_release]
-        if self.release.get(qubes_release, None):
-            release = self.release[qubes_release]
-        if not version:
-            raise QubesComponentException("Cannot determine package version")
-        if not release:
-            raise QubesComponentException("Cannot determine package release")
-        rpm = "{name}-{version}-{release}.{dist}.{arch}.rpm".format(
-                name=name, version=version, release=release, dist=dist,
-                arch=arch)
+    @staticmethod
+    def get_nvr_rpm(name, version, release, arch):
+        rpm = "{name}-{version}-{release}.{arch}.rpm".format(
+                name=name, version=version, release=release, arch=arch)
         return rpm
 
-    def get_nvr_deb(self, name, dist, arch, qubes_release, update=1):
+    def get_nvr_deb(self, dist, name, version, release, arch, update=1):
         debian_ver = dist.get_version()
-        version = self.version[qubes_release]
-        release = self.release[qubes_release]
-        deb = None
-        if version:
-            if release:
-                deb = "{name}_{version}-{release}+deb{debian_ver}u{update}_{arch}.deb".format(
-                    name=name, version=version, release=release,
-                    debian_ver=debian_ver, arch=arch, update=update)
-            else:
-                deb = "{name}_{version}+deb{debian_ver}u{update}_{arch}.deb".format(
-                    name=name, version=version, debian_ver=debian_ver,
-                    arch=arch, update=update)
+        if release:
+            deb = "{name}_{version}-{release}+deb{debian_ver}u{update}_{arch}.deb".format(
+                name=name, version=version, release=release,
+                debian_ver=debian_ver, arch=arch, update=update)
+        else:
+            deb = "{name}_{version}+deb{debian_ver}u{update}_{arch}.deb".format(
+                name=name, version=version, debian_ver=debian_ver,
+                arch=arch, update=update)
         return deb
 
     def update(self, qubes_release, dist_dom0, dists_vm, branch=None):
@@ -130,8 +101,6 @@ class QubesComponent:
         except subprocess.CalledProcessError:
             return
         self.branch[qubes_release] = branch
-        self.version[qubes_release] = self.get_version()
-        self.release[qubes_release] = self.get_release()
 
         self.raw_packages_list[qubes_release] = {"dom0": {}, "vm": {}}
         self.nvr_packages_list[qubes_release] = {"dom0": {}, "vm": {}}
@@ -139,20 +108,22 @@ class QubesComponent:
         if self.name == "linux-template-builder":
             return
 
+        # dom0
         if type(dist_dom0) == str:
             dist_dom0 = QubesDist(dist_dom0)
         packages_list = []
         specs = get_rpm_spec_files(self.orig_src, dist_dom0.name, "dom0")
         for spec in specs:
-            rpm_parser = RPMParser(os.path.join(self.orig_src, spec))
+            rpm_parser = RPMParser(self.orig_src, spec)
             packages_list += rpm_parser.get_packages()
         self.raw_packages_list[qubes_release]["dom0"][dist_dom0.name] = []
         self.nvr_packages_list[qubes_release]["dom0"][dist_dom0.name] = []
         for pkg in packages_list:
             self.raw_packages_list[qubes_release]["dom0"][dist_dom0.name].append(pkg['name'])
-            nvr_pkg = self.get_nvr_rpm(pkg['name'], dist_dom0.name, pkg['arch'][0], qubes_release, version=pkg["version"], release=pkg["release"])
+            nvr_pkg = self.get_nvr_rpm(pkg['name'], pkg["version"], pkg["release"], pkg['arch'][0])
             self.nvr_packages_list[qubes_release]["dom0"][dist_dom0.name].append(nvr_pkg)
 
+        # vm
         for dist in dists_vm:
             packages_list = []
             if type(dist) == str:
@@ -160,29 +131,25 @@ class QubesComponent:
             if dist.is_rpm():
                 specs = get_rpm_spec_files(self.orig_src, dist.name, "vm")
                 for spec in specs:
-                    rpm_parser = RPMParser(os.path.join(self.orig_src, spec))
+                    rpm_parser = RPMParser(self.orig_src, spec)
                     packages_list += rpm_parser.get_packages()
             elif dist.is_deb():
                 control = get_deb_control_file(self.orig_src, dist.name)
                 if control:
                     control = os.path.join(self.orig_src, control)
-                    deb_parser = DEBParser(control)
+                    deb_parser = DEBParser(self.orig_src, control)
                     packages_list = deb_parser.get_packages()
             self.raw_packages_list[qubes_release]["vm"][dist.name] = []
             self.nvr_packages_list[qubes_release]["vm"][dist.name] = []
             for pkg in packages_list:
-                self.raw_packages_list[qubes_release]["vm"][dist.name].append(
-                    pkg['name'])
+                self.raw_packages_list[qubes_release]["vm"][dist.name].append(pkg['name'])
                 if dist.is_rpm():
-                    nvr_pkg = self.get_nvr_rpm(
-                        pkg['name'], dist, pkg['arch'][0], qubes_release, version=pkg["version"], release=pkg["release"])
+                    nvr_pkg = self.get_nvr_rpm(pkg['name'], pkg["version"], pkg["release"], pkg['arch'][0])
                 elif dist.is_deb():
-                    nvr_pkg = self.get_nvr_deb(
-                        pkg['name'], dist, pkg['arch'][0], qubes_release)
+                    nvr_pkg = self.get_nvr_deb(dist, pkg['name'], pkg["version"], pkg["release"], pkg['arch'][0])
                 else:
                     continue
-                self.nvr_packages_list[qubes_release]["vm"][dist.name].append(
-                    nvr_pkg)
+                self.nvr_packages_list[qubes_release]["vm"][dist.name].append(nvr_pkg)
 
     def get_nvr_packages_list(self, qubes_release):
         packages_list = self.nvr_packages_list[qubes_release]
