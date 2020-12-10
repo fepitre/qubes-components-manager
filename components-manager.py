@@ -4,11 +4,16 @@ import os
 import sys
 import json
 import argparse
+import logging
 
 from jinja2 import Template
 
 from lib.component import QubesComponent
 from lib.dist import QubesDist
+
+logger = logging.getLogger(__name__)
+console_handler = logging.StreamHandler(sys.stderr)
+logger.addHandler(console_handler)
 
 AVAILABLE_FORMAT_ITEMS = [
     "component", "qubes_release", "package_set", "dist", "packages"]
@@ -19,7 +24,7 @@ class QubesComponentsManagerException(Exception):
 
 
 class ComponentsManagerCli:
-    def __init__(self, releasefile, components_folder, qubes_src):
+    def __init__(self, releasefile, components_folder, qubes_src, verbose=False):
         self.releasefile = releasefile
         self.components_folder = components_folder
         self.qubes_src = qubes_src
@@ -30,7 +35,10 @@ class ComponentsManagerCli:
         self.vm = {}
         self.components = []
 
+        self.verbose = verbose
+
     def init(self):
+        logger.debug("-> Init Qubes components CLI")
         with open(self.releasefile) as fd:
             self.data = json.loads(fd.read())
 
@@ -55,6 +63,9 @@ class ComponentsManagerCli:
                 component_file = os.path.join(
                     self.components_folder, '%s.json' % component)
                 orig_src = os.path.join(self.qubes_src, component)
+                if not os.path.exists(orig_src):
+                    logger.debug("--> Cannot find source for %s" % component)
+                    continue
                 with open(component_file) as fd:
                     component_data = json.loads(fd.read()).get(component, {})
                 self.data["components"][component] = component_data
@@ -224,7 +235,7 @@ class ComponentsManagerCli:
 
     def update_components(self, components):
         for component in self.get_components_from_name(components):
-            print("-> Updating %s" % component)
+            logger.debug("-> Update %s" % component)
             component_file = os.path.join(
                 self.components_folder, '%s.json' % component.name)
 
@@ -235,8 +246,8 @@ class ComponentsManagerCli:
             with open(component_file, 'w') as fd:
                 fd.write(json.dumps(component.to_dict(), indent=4))
 
-    @staticmethod
-    def get_packages_list(component, qubes_release, with_nvr=False):
+    def get_packages_list(self, component, qubes_release, with_nvr=False):
+        logger.debug("-> Get packages list for %s" % component)
         if with_nvr:
             packages_list = component.get_nvr_packages_list(qubes_release)
         else:
@@ -250,8 +261,9 @@ class ComponentsManagerCli:
         pkgs = {}
         pkgs_with_format = []
 
-        if raw and not req_format:
+        if not req_format:
             req_format = ["packages"]
+        req_format = ':'.join('{%s}' % f for f in req_format)
 
         for component in self.get_components_from_name(components):
             pkgs[component.name] = {}
@@ -260,27 +272,6 @@ class ComponentsManagerCli:
                     continue
                 packages_list = self.get_packages_list(
                     component, qubes_release, with_nvr)
-                if raw:
-                    requested_format = ':'.join('{%s}' % f for f in req_format)
-                    for package_set in packages_list.keys():
-                        if req_package_set and package_set != req_package_set:
-                            continue
-                        for dist in packages_list[package_set].keys():
-                            if req_dist and dist not in req_dist:
-                                continue
-                            component_packages_list = \
-                                packages_list[package_set][dist]
-                            if skip_empty and not component_packages_list:
-                                continue
-                            pkgs_with_format.append(
-                                requested_format.format(
-                                    component=component.name,
-                                    qubes_release=qubes_release,
-                                    package_set=package_set,
-                                    dist=dist,
-                                    packages=' '.join(component_packages_list)
-                                )
-                            )
                 if req_package_set:
                     if req_package_set == "dom0":
                         del packages_list["vm"]
@@ -295,9 +286,22 @@ class ComponentsManagerCli:
                         if skip_empty and not v:
                             continue
                         filtered_list[k] = v
-                    if filtered_list:
-                        pkgs[component.name][qubes_release][package_set] = \
-                            filtered_list
+
+                    pkgs[component.name][qubes_release][package_set] = \
+                        filtered_list
+
+                    for dist in pkgs[component.name][qubes_release][package_set].keys():
+                        component_packages_list = \
+                            pkgs[component.name][qubes_release][package_set][dist]
+                        pkgs_with_format.append(
+                            req_format.format(
+                                component=component.name,
+                                qubes_release=qubes_release,
+                                package_set=package_set,
+                                dist=dist,
+                                packages=' '.join(component_packages_list)
+                            )
+                        )
         if raw:
             output = pkgs_with_format
         else:
@@ -322,7 +326,16 @@ def get_args():
         help="Local path of Qubes sources.",
         default=os.path.join(os.getcwd(), 'qubes-builder/qubes-src')
     )
-
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Verbose."
+    )
+    parser.add_argument(
+        "--debug",
+        action="store_true",
+        help="Debug."
+    )
     subparser = parser.add_subparsers(dest='command')
 
     update_parser = subparser.add_parser('update', help='Update')
@@ -400,25 +413,31 @@ def main():
 
     # sanity checks
     if not os.path.exists(args.releasefile):
-        print("ERROR: Cannot find release file %s" % args.releasefile)
+        logger.error("-> Cannot find release file %s" % args.releasefile)
         return 1
     if not os.path.exists(args.components_folder):
-        print(
-            "ERROR: Cannot find components folder %s" % args.components_folder)
+        logger.error("-> Cannot find components folder %s" % args.components_folder)
         return 1
     if not os.path.exists(args.qubes_src):
-        print("ERROR: Cannot find qubes-src folder")
+        logger.error("-> Cannot find qubes-src folder")
         return 1
     if args.package_set and args.package_set not in ("dom0", "vm"):
-        print("ERROR: Invalid package set provided")
+        logger.error("-> Invalid package set provided")
         return 1
     requested_format = None
     if args.format:
         requested_format = args.format.split(':')
         for fmt in args.format.split(':'):
             if fmt not in AVAILABLE_FORMAT_ITEMS:
-                print("ERROR: Unsupported format '%s'" % fmt)
+                logger.error("-> Unsupported format '%s'" % fmt)
                 return 1
+
+    if args.debug:
+        logger.setLevel(logging.DEBUG)
+    elif args.verbose:
+        logger.setLevel(logging.INFO)
+    else:
+        logger.setLevel(logging.ERROR)
 
     cli = ComponentsManagerCli(
         releasefile=args.releasefile,

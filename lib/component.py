@@ -120,9 +120,6 @@ class QubesComponent:
     def update(self, qubes_release, dist_dom0, dists_vm, branch=None):
         if not branch:
             branch = self.branch.get(qubes_release, 'master')
-        if not os.path.exists(self.orig_src):
-            print("--> Cannot find source")
-            return
         try:
             self._checkout(branch)
         except subprocess.CalledProcessError:
