@@ -293,15 +293,16 @@ class ComponentsManagerCli:
                     for dist in pkgs[component.name][qubes_release][package_set].keys():
                         component_packages_list = \
                             pkgs[component.name][qubes_release][package_set][dist]
-                        pkgs_with_format.append(
-                            req_format.format(
-                                component=component.name,
-                                qubes_release=qubes_release,
-                                package_set=package_set,
-                                dist=dist,
-                                packages=' '.join(component_packages_list)
+                        if component_packages_list is not None:
+                            pkgs_with_format.append(
+                                req_format.format(
+                                    component=component.name,
+                                    qubes_release=qubes_release,
+                                    package_set=package_set,
+                                    dist=dist,
+                                    packages=' '.join(component_packages_list)
+                                )
                             )
-                        )
         if raw:
             output = pkgs_with_format
         else:

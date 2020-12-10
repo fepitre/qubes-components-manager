@@ -35,7 +35,7 @@ class RPMParser:
                 fd_spec.seek(0)
                 spec = fd_spec.name
                 cmd = ["/usr/bin/rpmspec", "-q", "--qf",
-                       '\{"name": "%{name}", "arch": "%{arch}"\}\n', spec]
+                       '\{"name": "%{name}", "version": "%{version}", "release": "%{release}", "arch": "%{arch}"\}\n', spec]
                 kwargs = {
                     "cwd": curr_dir,
                     "text": True
@@ -50,6 +50,8 @@ class RPMParser:
         raw_info = json.loads(raw_info)
         pkg = None
         name = raw_info["name"]
+        version = raw_info["version"]
+        release = raw_info["release"]
         arch = raw_info.get("arch", None)
 
         if not filtered_arches:
@@ -58,6 +60,8 @@ class RPMParser:
         if arch in filtered_arches:
             pkg = {
                 "name": name,
+                "version": version,
+                "release": release,
                 "arch": [arch]
             }
         return pkg
