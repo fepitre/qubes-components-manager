@@ -245,39 +245,59 @@ class ComponentsManagerCli:
 
     def get_components_packages_list(self, components, req_dist=None, raw=False,
                                      req_package_set=None, with_nvr=False,
-                                     req_format=None, skip_empty=False):
+                                     req_format=None, skip_empty=False,
+                                     req_release=None):
         pkgs = {}
         pkgs_with_format = []
 
         if raw and not req_format:
             req_format = ["packages"]
-        requested_format = ':'.join('{%s}' % f for f in req_format)
 
         for component in self.get_components_from_name(components):
             pkgs[component.name] = {}
             for qubes_release in component.releases:
+                if req_release and qubes_release != req_release:
+                    continue
                 packages_list = self.get_packages_list(
                     component, qubes_release, with_nvr)
-                for package_set in packages_list.keys():
-                    if req_package_set and package_set != req_package_set:
-                        continue
-                    for dist in packages_list[package_set].keys():
-                        if req_dist and dist not in req_dist:
+                if raw:
+                    requested_format = ':'.join('{%s}' % f for f in req_format)
+                    for package_set in packages_list.keys():
+                        if req_package_set and package_set != req_package_set:
                             continue
-                        component_packages_list = \
-                            packages_list[package_set][dist]
-                        if skip_empty and not component_packages_list:
-                            continue
-                        pkgs_with_format.append(
-                            requested_format.format(
-                                component=component.name,
-                                qubes_release=qubes_release,
-                                package_set=package_set,
-                                dist=dist,
-                                packages=' '.join(component_packages_list)
+                        for dist in packages_list[package_set].keys():
+                            if req_dist and dist not in req_dist:
+                                continue
+                            component_packages_list = \
+                                packages_list[package_set][dist]
+                            if skip_empty and not component_packages_list:
+                                continue
+                            pkgs_with_format.append(
+                                requested_format.format(
+                                    component=component.name,
+                                    qubes_release=qubes_release,
+                                    package_set=package_set,
+                                    dist=dist,
+                                    packages=' '.join(component_packages_list)
+                                )
                             )
-                        )
-                pkgs[component.name][qubes_release] = packages_list
+                if req_package_set:
+                    if req_package_set == "dom0":
+                        del packages_list["vm"]
+                    else:
+                        del packages_list["dom0"]
+                pkgs[component.name][qubes_release] = {}
+                for package_set in packages_list.keys():
+                    filtered_list = {}
+                    for k, v in packages_list[package_set].items():
+                        if req_dist and k not in req_dist:
+                            continue
+                        if skip_empty and not v:
+                            continue
+                        filtered_list[k] = v
+                    if filtered_list:
+                        pkgs[component.name][qubes_release][package_set] = \
+                            filtered_list
         if raw:
             output = pkgs_with_format
         else:
@@ -368,6 +388,10 @@ def get_args():
         "--package-set",
         help="Filter package set."
     )
+    get_parser.add_argument(
+        "--release",
+        help="Filter Qubes release."
+    )
     return parser.parse_args()
 
 
@@ -419,12 +443,13 @@ def main():
                 cli.update_components(args.packages_list)
             pkgs_list = cli.get_components_packages_list(
                 args.packages_list,
-                req_dist=args.dist,
-                req_package_set=args.package_set,
                 with_nvr=args.with_nvr,
                 raw=args.raw,
+                skip_empty=args.skip_empty,
                 req_format=requested_format,
-                skip_empty=args.skip_empty
+                req_dist=args.dist,
+                req_package_set=args.package_set,
+                req_release=args.release,
             )
             if not args.raw:
                 print(json.dumps(pkgs_list, indent=4))
