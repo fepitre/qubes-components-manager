@@ -6,7 +6,6 @@
                 "branch": "master",
                 "dom0": {
                     "fc32": [
-                        "python-blivet",
                         "blivet-data",
                         "python3-blivet"
                     ]

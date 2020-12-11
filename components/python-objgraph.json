@@ -5,34 +5,28 @@
                 "branch": "master",
                 "dom0": {
                     "fc25": [
-                        "python-objgraph",
                         "python3-objgraph",
                         "python-objgraph-doc"
                     ]
                 },
                 "vm": {
                     "fc30": [
-                        "python-objgraph",
                         "python3-objgraph",
                         "python-objgraph-doc"
                     ],
                     "fc31": [
-                        "python-objgraph",
                         "python3-objgraph",
                         "python-objgraph-doc"
                     ],
                     "fc32": [
-                        "python-objgraph",
                         "python3-objgraph",
                         "python-objgraph-doc"
                     ],
                     "centos7": [
-                        "python-objgraph",
                         "python3-objgraph",
                         "python-objgraph-doc"
                     ],
                     "centos8": [
-                        "python-objgraph",
                         "python3-objgraph",
                         "python-objgraph-doc"
                     ],
@@ -48,29 +42,24 @@
                 "branch": "master",
                 "dom0": {
                     "fc32": [
-                        "python-objgraph",
                         "python3-objgraph",
                         "python-objgraph-doc"
                     ]
                 },
                 "vm": {
                     "fc32": [
-                        "python-objgraph",
                         "python3-objgraph",
                         "python-objgraph-doc"
                     ],
                     "fc33": [
-                        "python-objgraph",
                         "python3-objgraph",
                         "python-objgraph-doc"
                     ],
                     "centos7": [
-                        "python-objgraph",
                         "python3-objgraph",
                         "python-objgraph-doc"
                     ],
                     "centos8": [
-                        "python-objgraph",
                         "python3-objgraph",
                         "python-objgraph-doc"
                     ],

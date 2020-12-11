@@ -23,7 +23,6 @@
                 "branch": "master",
                 "dom0": {
                     "fc32": [
-                        "grub2",
                         "grub2-common",
                         "grub2-tools",
                         "grub2-tools-efi",
@@ -37,7 +36,6 @@
                         "grub2-efi-ia32-cdboot",
                         "grub2-pc",
                         "grub2-pc-modules",
-                        "grub2-pc-tools",
                         "grub2-debuginfo",
                         "grub2-debugsource"
                     ]

@@ -5,7 +5,6 @@
                 "branch": "master",
                 "dom0": {
                     "fc32": [
-                        "dummy-psu",
                         "dummy-psu-module",
                         "dummy-psu-sender",
                         "dummy-psu-receiver",
@@ -15,7 +14,6 @@
                 },
                 "vm": {
                     "fc32": [
-                        "dummy-psu",
                         "dummy-psu-module",
                         "dummy-psu-sender",
                         "dummy-psu-receiver",
@@ -23,7 +21,6 @@
                         "dummy-psu-debugsource"
                     ],
                     "fc33": [
-                        "dummy-psu",
                         "dummy-psu-module",
                         "dummy-psu-sender",
                         "dummy-psu-receiver",
@@ -31,7 +28,6 @@
                         "dummy-psu-debugsource"
                     ],
                     "centos7": [
-                        "dummy-psu",
                         "dummy-psu-module",
                         "dummy-psu-sender",
                         "dummy-psu-receiver",
@@ -39,7 +35,6 @@
                         "dummy-psu-debugsource"
                     ],
                     "centos8": [
-                        "dummy-psu",
                         "dummy-psu-module",
                         "dummy-psu-sender",
                         "dummy-psu-receiver",

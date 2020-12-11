@@ -15,7 +15,6 @@
                         "kde-baseapps-debuginfo",
                         "kde-baseapps-debugsource",
                         "kde-settings",
-                        "kde-settings-minimal",
                         "kde-settings-plasma",
                         "kde-settings-pulseaudio",
                         "qt-settings",

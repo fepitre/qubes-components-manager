@@ -81,7 +81,6 @@
                         "libvirt-devel",
                         "libvirt-debuginfo",
                         "libvirt-debugsource",
-                        "libvirt-python",
                         "python3-libvirt",
                         "libvirt-python-debuginfo",
                         "libvirt-python-debugsource"

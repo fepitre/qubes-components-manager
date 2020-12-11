@@ -107,7 +107,6 @@
                         "qubes-mgmt-salt-config",
                         "qubes-mgmt-salt-shared-formulas",
                         "qubes-mgmt-salt-admin-tools",
-                        "qubes-mgmt-salt-vm",
                         "qubes-mgmt-salt-vm-connector"
                     ],
                     "fc33": [
@@ -115,7 +114,6 @@
                         "qubes-mgmt-salt-config",
                         "qubes-mgmt-salt-shared-formulas",
                         "qubes-mgmt-salt-admin-tools",
-                        "qubes-mgmt-salt-vm",
                         "qubes-mgmt-salt-vm-connector"
                     ],
                     "centos7": [
@@ -123,7 +121,6 @@
                         "qubes-mgmt-salt-config",
                         "qubes-mgmt-salt-shared-formulas",
                         "qubes-mgmt-salt-admin-tools",
-                        "qubes-mgmt-salt-vm",
                         "qubes-mgmt-salt-vm-connector"
                     ],
                     "centos8": [
@@ -131,7 +128,6 @@
                         "qubes-mgmt-salt-config",
                         "qubes-mgmt-salt-shared-formulas",
                         "qubes-mgmt-salt-admin-tools",
-                        "qubes-mgmt-salt-vm",
                         "qubes-mgmt-salt-vm-connector"
                     ],
                     "buster": [

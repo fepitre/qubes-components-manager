@@ -5,29 +5,23 @@
                 "branch": "master",
                 "dom0": {
                     "fc25": [
-                        "python-panflute",
                         "python3-panflute"
                     ]
                 },
                 "vm": {
                     "fc30": [
-                        "python-panflute",
                         "python3-panflute"
                     ],
                     "fc31": [
-                        "python-panflute",
                         "python3-panflute"
                     ],
                     "fc32": [
-                        "python-panflute",
                         "python3-panflute"
                     ],
                     "centos7": [
-                        "python-panflute",
                         "python3-panflute"
                     ],
                     "centos8": [
-                        "python-panflute",
                         "python3-panflute"
                     ],
                     "stretch": [],
@@ -42,25 +36,20 @@
                 "branch": "master",
                 "dom0": {
                     "fc32": [
-                        "python-panflute",
                         "python3-panflute"
                     ]
                 },
                 "vm": {
                     "fc32": [
-                        "python-panflute",
                         "python3-panflute"
                     ],
                     "fc33": [
-                        "python-panflute",
                         "python3-panflute"
                     ],
                     "centos7": [
-                        "python-panflute",
                         "python3-panflute"
                     ],
                     "centos8": [
-                        "python-panflute",
                         "python3-panflute"
                     ],
                     "buster": [],

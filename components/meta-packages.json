@@ -6,37 +6,31 @@
                 "branch": "release4.0",
                 "dom0": {
                     "fc25": [
-                        "qubes-dom0-meta-packages",
                         "qubes-repo-contrib"
                     ]
                 },
                 "vm": {
                     "fc30": [
-                        "qubes-vm-meta-packages",
                         "qubes-vm-dependencies",
                         "qubes-vm-recommended",
                         "qubes-repo-contrib"
                     ],
                     "fc31": [
-                        "qubes-vm-meta-packages",
                         "qubes-vm-dependencies",
                         "qubes-vm-recommended",
                         "qubes-repo-contrib"
                     ],
                     "fc32": [
-                        "qubes-vm-meta-packages",
                         "qubes-vm-dependencies",
                         "qubes-vm-recommended",
                         "qubes-repo-contrib"
                     ],
                     "centos7": [
-                        "qubes-vm-meta-packages",
                         "qubes-vm-dependencies",
                         "qubes-vm-recommended",
                         "qubes-repo-contrib"
                     ],
                     "centos8": [
-                        "qubes-vm-meta-packages",
                         "qubes-vm-dependencies",
                         "qubes-vm-recommended",
                         "qubes-repo-contrib"

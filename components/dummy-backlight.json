@@ -5,7 +5,6 @@
                 "branch": "master",
                 "dom0": {
                     "fc32": [
-                        "dummy-backlight",
                         "dummy-backlight-module",
                         "dummy-backlight-dom0",
                         "dummy-backlight-vm"
@@ -13,25 +12,21 @@
                 },
                 "vm": {
                     "fc32": [
-                        "dummy-backlight",
                         "dummy-backlight-module",
                         "dummy-backlight-dom0",
                         "dummy-backlight-vm"
                     ],
                     "fc33": [
-                        "dummy-backlight",
                         "dummy-backlight-module",
                         "dummy-backlight-dom0",
                         "dummy-backlight-vm"
                     ],
                     "centos7": [
-                        "dummy-backlight",
                         "dummy-backlight-module",
                         "dummy-backlight-dom0",
                         "dummy-backlight-vm"
                     ],
                     "centos8": [
-                        "dummy-backlight",
                         "dummy-backlight-module",
                         "dummy-backlight-dom0",
                         "dummy-backlight-vm"

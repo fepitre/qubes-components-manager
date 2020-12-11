@@ -5,21 +5,17 @@
                 "branch": "master",
                 "dom0": {
                     "fc25": [
-                        "python-Quamash",
                         "python3-Quamash"
                     ]
                 },
                 "vm": {
                     "fc30": [
-                        "python-Quamash",
                         "python3-Quamash"
                     ],
                     "fc31": [
-                        "python-Quamash",
                         "python3-Quamash"
                     ],
                     "fc32": [
-                        "python-Quamash",
                         "python3-Quamash"
                     ],
                     "centos7": [],
