@@ -7,6 +7,7 @@ from lib.common import get_version, get_release
 class DEBParserException(Exception):
     pass
 
+
 class DEBParser:
 
     def __init__(self, orig_src, control):
@@ -36,7 +37,6 @@ class DEBParser:
             with open(self.control, "r") as fd:
                 content = fd.read().strip()
             packages = content.split("\n\n")
-
             if packages[0]:
                 raw_pkg_info = [self.get_raw_info(pkg) for pkg in packages]
                 for pkg in raw_pkg_info:
@@ -75,7 +75,7 @@ class DEBParser:
                 filtered_arches = {'any', 'all', 'amd64'}
             available_arches = list(set(arch).intersection(filtered_arches))
             if available_arches:
-                available_arches = [arch.replace('all', 'any') for arch in
+                available_arches = [arch.replace('any', 'amd64') for arch in
                                     available_arches]
                 pkg = {
                     "name": name,

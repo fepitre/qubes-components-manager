@@ -43,7 +43,6 @@ print-%  : ; @echo $($*)
             output = subprocess.check_output([cmd], cwd=curr_dir, shell=True,
                                              text=True, env=env)
             value = output.rstrip('\n')
-
     return value
 
 
@@ -69,7 +68,9 @@ def get_rpm_spec_files(component_path, dist, package_set):
 
 def get_deb_control_file(component_path, vm):
     makefile_path = os.path.join(component_path, 'Makefile.builder')
-    env = os.environ.copy()
+    env = {
+        "COMPONENT": os.path.basename(component_path)
+    }
     env.update({'PACKAGE_SET': 'vm', 'DISTRIBUTION': 'debian', 'DIST': vm})
     debian_build_dirs = get_makefile_value(
         makefile_path, 'DEBIAN_BUILD_DIRS', env)
