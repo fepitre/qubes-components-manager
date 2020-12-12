@@ -64,7 +64,7 @@ class ComponentsManagerCli:
                     self.components_folder, '%s.json' % component)
                 orig_src = os.path.join(self.qubes_src, component)
                 if not os.path.exists(orig_src):
-                    logger.debug("--> Cannot find source for %s" % component)
+                    logger.error("--> Cannot find source for %s" % component)
                     continue
                 with open(component_file) as fd:
                     component_data = json.loads(fd.read()).get(component, {})
