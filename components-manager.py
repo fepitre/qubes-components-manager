@@ -38,7 +38,7 @@ class ComponentsManagerCli:
         self.verbose = verbose
 
     def init(self):
-        logger.debug("-> Init Qubes components CLI")
+        logger.debug("DEBUG: Init Qubes components CLI")
         with open(self.releasefile) as fd:
             self.data = json.loads(fd.read())
 
@@ -64,7 +64,7 @@ class ComponentsManagerCli:
                     self.components_folder, '%s.json' % component)
                 orig_src = os.path.join(self.qubes_src, component)
                 if not os.path.exists(orig_src):
-                    logger.error("--> Cannot find source for %s" % component)
+                    logger.error("ERROR: Cannot find source for %s" % component)
                     continue
                 with open(component_file) as fd:
                     component_data = json.loads(fd.read()).get(component, {})
@@ -235,7 +235,7 @@ class ComponentsManagerCli:
 
     def update_components(self, components):
         for component in self.get_components_from_name(components):
-            logger.debug("-> Update %s" % component)
+            logger.debug("DEBUG: Update %s" % component)
             component_file = os.path.join(
                 self.components_folder, '%s.json' % component.name)
 
@@ -247,7 +247,7 @@ class ComponentsManagerCli:
                 fd.write(json.dumps(component.to_dict(), indent=4))
 
     def get_packages_list(self, component, qubes_release, with_nvr=False):
-        logger.debug("-> Get packages list for %s" % component)
+        logger.debug("DEBUG: Get packages list for %s" % component)
         if with_nvr:
             packages_list = component.get_nvr_packages_list(qubes_release)
         else:
@@ -414,13 +414,13 @@ def main():
 
     # sanity checks
     if not os.path.exists(args.releasefile):
-        logger.error("-> Cannot find release file %s" % args.releasefile)
+        logger.error("ERROR: Cannot find release file %s" % args.releasefile)
         return 1
     if not os.path.exists(args.components_folder):
-        logger.error("-> Cannot find components folder %s" % args.components_folder)
+        logger.error("ERROR: Cannot find components folder %s" % args.components_folder)
         return 1
     if not os.path.exists(args.qubes_src):
-        logger.error("-> Cannot find qubes-src folder")
+        logger.error("ERROR: Cannot find qubes-src folder")
         return 1
     if args.debug:
         logger.setLevel(logging.DEBUG)
@@ -448,14 +448,14 @@ def main():
             cli.create_distfile(args.distfile)
     elif args.command == 'get':
         if args.package_set and args.package_set not in ("dom0", "vm"):
-            logger.error("-> Invalid package set provided")
+            logger.error("ERROR: Invalid package set provided")
             return 1
         requested_format = None
         if args.format:
             requested_format = args.format.split(':')
             for fmt in args.format.split(':'):
                 if fmt not in AVAILABLE_FORMAT_ITEMS:
-                    logger.error("-> Unsupported format '%s'" % fmt)
+                    logger.error("ERROR: Unsupported format '%s'" % fmt)
                     return 1
         if args.packages_list:
             if args.with_nvr:
