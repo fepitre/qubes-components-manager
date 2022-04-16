@@ -1,7 +1,7 @@
 import os
 import tempfile
 import subprocess
-
+import pathlib
 
 def get_version(component_path):
     try:
@@ -64,7 +64,7 @@ include $(ORIG_SRC)/../mgmt-salt/Makefile.builder
 endif
 GITHUB_STATE_DIR = $(HOME)/github-notify-state
 FETCH_CMD := XYZ
-.PHONY: *.asc
+.PHONY: *.asc *.sig
 include {makefile_builder}
 -include {makefile}
 
@@ -139,11 +139,14 @@ def get_deb_patch_serie(component_path, vm):
     if source_copy_in:
         output = call_makefile(makefile_path, f"-n {source_copy_in}", env=env)
         for l in output.splitlines():
+            if serie:
+                break
             if "debian-quilt" in l:
                 parsed_line = l.split()
                 for idx, val in enumerate(parsed_line):
                     if val.endswith("debian-quilt"):
-                        serie = parsed_line[idx+1]
+                        serie = parsed_line[idx+1].strip().rstrip('\n')
+                        serie = pathlib.Path(serie).relative_to(component_path)
                         break
     return serie
 
